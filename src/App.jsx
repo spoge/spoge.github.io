@@ -4,7 +4,7 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <div>Locally committed changes! :)</div>
+      <div>From develop branch! :)</div>
     </div>
   );
 }
