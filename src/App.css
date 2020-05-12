@@ -1,11 +1,35 @@
-.App {
-  text-align: center;
+.app {
   background-color: #282c34;
+  color: white;
   min-height: 100vh;
+  /* font-size: 28px; */
+  font-size: calc(12px + 2vmin);
+  display: grid;
+  grid-template-columns: 20% auto;
+}
+
+.app-nav-bar {
+  padding: 1em;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.app-nav-bar a {
+  font-size: 0.8em;
   color: white;
+}
+
+.app-nav-bar a:hover {
+  color: rgb(247, 218, 166);
+}
+
+.app-content {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
 }
