@@ -1,29 +1,33 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
+// import Terminal from "./Terminal";
 
 const App = () => {
   return (
     <Router>
       <div className="app">
-        <div className="app-nav-bar">
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/fun">Fun</Link>
+        <div className="app-container">
+          <div className="app-nav-bar">
+            <Link to="/">Home</Link>
+            <Link to="/about">About</Link>
+            <Link to="/fun">Fun</Link>
+          </div>
+          <div className="app-content">
+            <Switch>
+              <Route path="/about">
+                <About />
+              </Route>
+              <Route path="/fun">
+                <Fun />
+              </Route>
+              <Route path="/">
+                <Home />
+              </Route>
+            </Switch>
+          </div>
         </div>
-        <div className="app-content">
-          <Switch>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/fun">
-              <Fun />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
-          </Switch>
-        </div>
+        {/* <Terminal /> */}
       </div>
     </Router>
   );

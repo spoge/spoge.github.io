@@ -1,9 +1,17 @@
 .app {
   background-color: #282c34;
   color: white;
+  /* background-color: black;
+  color: green; */
   min-height: 100vh;
   /* font-size: 28px; */
   font-size: calc(12px + 2vmin);
+  display: grid;
+  grid-template-rows: 90% 10%;
+  font-family: ScreenMatrix;
+}
+
+.app-container {
   display: grid;
   grid-template-columns: 20% auto;
 }
@@ -19,6 +27,7 @@
 .app-nav-bar a {
   font-size: 0.8em;
   color: white;
+  /* color: green; */
 }
 
 .app-nav-bar a:hover {

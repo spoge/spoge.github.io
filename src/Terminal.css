@@ -1,0 +1,46 @@
+.terminal {
+  background-color: black;
+  color: green;
+  font-family: ScreenMatrix;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1em;
+}
+
+.terminal-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 0.25em;
+  /* margin-bottom: 0.25em; */
+}
+
+.terminal-window {
+  width: 0em;
+  /* width: fit-content; */
+  /* padding: 0.5em; */
+  /* font-size: 1em; */
+  /* background-color: black; */
+  /* color: green; */
+  border: 0;
+  outline: none;
+  /* display: none; */
+}
+
+.terminal-text {
+  white-space: pre-wrap;
+}
+
+.cursor {
+  /* float: left; */
+  width: 0.5em;
+  height: 1em;
+  background: green;
+  /* background: #21f838; */
+}
+
+.hide {
+  display: none;
+}
