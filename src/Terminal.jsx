@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Terminal.css";
 
-const Terminal = () => {
+const Terminal = ({ onEnterPress }) => {
   const terminalInput = useRef(null);
   const [isTerminalFocused, setIsTerminalFocused] = useState(false);
   const [isBlink, setIsBlink] = useState(false);
@@ -27,6 +27,14 @@ const Terminal = () => {
     return () => clearInterval(interval);
   }, [haveRecentlyTyped, isBlink, isTerminalFocused]);
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      onEnterPress(inputText);
+      setInputText("");
+      terminalInput.current.value = "";
+    }
+  };
+
   return (
     <div
       className="terminal"
@@ -51,6 +59,7 @@ const Terminal = () => {
           setHaveRecentlyTyped(true);
           setIsBlink(true);
         }}
+        onKeyDown={handleKeyDown}
       />
       <div className="terminal-text">{inputText}</div>
       <div className={`cursor ${!isBlink ? "hide" : ""}`}></div>

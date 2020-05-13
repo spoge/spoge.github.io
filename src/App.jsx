@@ -1,35 +1,41 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Switch, Route, Link, withRouter } from "react-router-dom";
 import "./App.css";
-// import Terminal from "./Terminal";
+import Terminal from "./Terminal";
 
-const App = () => {
+const validPaths = ["/", "home", "about", "fun"];
+
+const App = ({ history }) => {
+  const onTerminalEnter = (text) => {
+    if (validPaths.includes(text)) {
+      history.push(text);
+    }
+  };
+
   return (
-    <Router>
-      <div className="app">
-        <div className="app-container">
-          <div className="app-nav-bar">
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
-            <Link to="/fun">Fun</Link>
-          </div>
-          <div className="app-content">
-            <Switch>
-              <Route path="/about">
-                <About />
-              </Route>
-              <Route path="/fun">
-                <Fun />
-              </Route>
-              <Route path="/">
-                <Home />
-              </Route>
-            </Switch>
-          </div>
+    <div className="app">
+      <div className="app-container">
+        <div className="app-nav-bar">
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/fun">Fun</Link>
         </div>
-        {/* <Terminal /> */}
+        <div className="app-content">
+          <Switch>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/fun">
+              <Fun />
+            </Route>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </div>
       </div>
-    </Router>
+      <Terminal onEnterPress={onTerminalEnter} />
+    </div>
   );
 };
 
@@ -38,11 +44,11 @@ const Home = () => {
 };
 
 const About = () => {
-  return <div>There should be something about someone here...</div>;
+  return <div>I am a programmer. I do computer stuff. I am not robot.</div>;
 };
 
 const Fun = () => {
   return <div>Cool stuff!</div>;
 };
 
-export default App;
+export default withRouter(App);
