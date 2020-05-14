@@ -1,54 +1,46 @@
-import React from "react";
-import { Switch, Route, Link, withRouter } from "react-router-dom";
+import React, { useState } from "react";
+import { Switch, Route, withRouter } from "react-router-dom";
 import "./App.css";
 import Terminal from "./Terminal";
-
-const validPaths = ["/", "home", "about", "fun"];
+import TerminalCommand from "./TerminalCommand";
 
 const App = ({ history }) => {
+  const [terminalHistory, setTerminalHistory] = useState([
+    <div>
+      Enter <b>help</b> to see all available commands.
+    </div>,
+  ]);
+
   const onTerminalEnter = (text) => {
-    if (validPaths.includes(text)) {
-      history.push(text);
+    if (text.toLowerCase() === "clear") {
+      setTerminalHistory([]);
+    } else {
+      setTerminalHistory([
+        ...terminalHistory,
+        <TerminalCommand history={history} text={text} />,
+      ]);
     }
   };
 
   return (
     <div className="app">
-      <div className="app-container">
-        <div className="app-nav-bar">
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/fun">Fun</Link>
-        </div>
-        <div className="app-content">
-          <Switch>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/fun">
-              <Fun />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
-          </Switch>
-        </div>
-      </div>
-      <Terminal onEnterPress={onTerminalEnter} />
+      <Switch>
+        <Route path="/fun">
+          <Fun />
+        </Route>
+        <Route>
+          <Terminal
+            terminalHistory={terminalHistory}
+            onEnterPress={onTerminalEnter}
+          />
+        </Route>
+      </Switch>
     </div>
   );
 };
 
-const Home = () => {
-  return <div>This is App. App is cool. Be like App.</div>;
-};
-
-const About = () => {
-  return <div>I am a programmer. I do computer stuff. I am not robot.</div>;
-};
-
 const Fun = () => {
-  return <div>Cool stuff!</div>;
+  return <div>Cool stuffs and games (maybe later?)!</div>;
 };
 
 export default withRouter(App);
