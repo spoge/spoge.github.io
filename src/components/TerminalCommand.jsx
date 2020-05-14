@@ -1,45 +1,47 @@
 import React from "react";
+import TerminalArrow from "./TerminalArrow";
+import TerminalText from "./TerminalText";
 
 const TerminalCommand = ({ history, text }) => {
   switch (text.toLowerCase()) {
     case "":
-      return <div>></div>;
+      return <TerminalArrow />;
     case "help":
       return (
         <div>
-          > {text}
-          <br></br>
-          <br></br>
-          <b>help</b> - see all commands
-          <br></br>
-          <b>about</b> - what is this
-          <br></br>
-          <b>/</b> or <b>home</b> - go home
-          <br></br>
-          <b>fun</b> - fun games or something maybe
-          <br></br>
-          <b>clear</b> - clear terminal window
+          <TerminalArrow text={text} />
+          <TerminalText>
+            <b>help</b> - see all commands
+          </TerminalText>
+          <TerminalText>
+            <b>about</b> - what is this
+          </TerminalText>
+          <TerminalText>
+            <b>/</b> or <b>home</b> - go home
+          </TerminalText>
+          <TerminalText>
+            <b>fun</b> - fun games or something maybe
+          </TerminalText>
+          <TerminalText>
+            <b>clear</b> - clear terminal window
+          </TerminalText>
         </div>
       );
-    case "/":
-    case "home":
-      history.push("/");
-      return <div>> {text}</div>;
     case "about":
       return (
         <div>
-          > {text}
-          <br></br>
-          <br></br>This is a terminal.
+          <TerminalArrow text={text} />
+          <TerminalText>This is a terminal.</TerminalText>
         </div>
       );
     default:
       return (
         <div>
-          > {text}
-          <br></br>
-          <br></br>Unknown command.<br></br>
-          Enter <b>help</b> to see all available commands.
+          <TerminalArrow text={text} />
+          <TerminalText>Unknown command.</TerminalText>
+          <TerminalText>
+            Enter <b>help</b> to see all available commands.
+          </TerminalText>
         </div>
       );
   }

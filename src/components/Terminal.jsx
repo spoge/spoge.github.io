@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Terminal.css";
+import TerminalArrow from "./TerminalArrow";
+import TerminalCaret from "./TerminalCaret";
 
 const Terminal = ({ terminalHistory, onEnterPress }) => {
   const terminalInput = useRef(null);
@@ -35,6 +37,7 @@ const Terminal = ({ terminalHistory, onEnterPress }) => {
     return () => clearInterval(interval);
   }, [haveRecentlyTyped, isFlashing, isTerminalFocused]);
 
+  // When 'Enter' key is pressed
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
       onEnterPress(inputText.toLowerCase());
@@ -58,7 +61,7 @@ const Terminal = ({ terminalHistory, onEnterPress }) => {
         ))}
       </div>
       <div className="terminal-input">
-        <div className="terminal-input-arrow">></div>
+        <TerminalArrow text={inputText} paddingBottom={false} />
         <input
           ref={terminalInput}
           className="terminal-input-window"
@@ -80,10 +83,7 @@ const Terminal = ({ terminalHistory, onEnterPress }) => {
           }}
           onKeyDown={handleKeyDown}
         />
-        <div className="terminal-input-text">{inputText}</div>
-        <div
-          className={`terminal-input-cursor ${!isFlashing ? "hide" : ""}`}
-        ></div>
+        <TerminalCaret enabled={isFlashing} />
       </div>
     </div>
   );

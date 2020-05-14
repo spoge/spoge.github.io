@@ -1,0 +1,11 @@
+.terminal-arrow {
+  display: flex;
+}
+
+.terminal-arrow-char {
+  padding-right: 0.25em;
+}
+
+.padding-bottom-1-2 {
+  padding-bottom: 0.5em;
+}

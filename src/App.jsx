@@ -4,7 +4,8 @@ import "./App.css";
 import Terminal from "./components/Terminal";
 import TerminalCommand from "./components/TerminalCommand";
 
-const validPaths = ["fun"];
+const validPaths = ["fun", "/"];
+const validPathsAlias = [{ home: "/" }];
 
 const App = ({ history }) => {
   const [terminalHistory, setTerminalHistory] = useState([
@@ -16,12 +17,17 @@ const App = ({ history }) => {
   const onTerminalEnter = (text) => {
     /**
      * Handling terminal input:
-     * 1. Redirect?
-     * 2. Clear terminal?
-     * 3. Cool commands in terminal!
+     * 1. Redirect with exact match? (i.e. "/fun" => "/fun")
+     * 2. Redirect with alias? (i.e. "/home" => "/")
+     * 3. Clear terminal?
+     * 4. Cool commands in terminal!
      */
     if (validPaths.includes(text)) {
       history.push(text);
+    } else if (
+      validPathsAlias.flatMap((entry) => Object.keys(entry)).includes(text)
+    ) {
+      history.push(validPathsAlias.find((entry) => entry[text])[text]);
     } else if (text === "clear") {
       setTerminalHistory([]);
     } else {
