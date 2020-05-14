@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Switch, Route, withRouter } from "react-router-dom";
 import "./App.css";
-import Terminal from "./Terminal";
-import TerminalCommand from "./TerminalCommand";
+import Terminal from "./components/Terminal";
+import TerminalCommand from "./components/TerminalCommand";
+
+const validPaths = ["fun"];
 
 const App = ({ history }) => {
   const [terminalHistory, setTerminalHistory] = useState([
@@ -12,7 +14,15 @@ const App = ({ history }) => {
   ]);
 
   const onTerminalEnter = (text) => {
-    if (text.toLowerCase() === "clear") {
+    /**
+     * Handling terminal input:
+     * 1. Redirect?
+     * 2. Clear terminal?
+     * 3. Cool commands in terminal!
+     */
+    if (validPaths.includes(text)) {
+      history.push(text);
+    } else if (text === "clear") {
       setTerminalHistory([]);
     } else {
       setTerminalHistory([
@@ -39,6 +49,7 @@ const App = ({ history }) => {
   );
 };
 
+// Placeholder
 const Fun = () => {
   return <div>Cool stuffs and games (maybe later?)!</div>;
 };

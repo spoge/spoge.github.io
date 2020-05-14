@@ -25,9 +25,6 @@ const TerminalCommand = ({ history, text }) => {
     case "home":
       history.push("/");
       return <div>> {text}</div>;
-    case "fun":
-      history.push("/fun");
-      return <div>> {text}</div>;
     case "about":
       return (
         <div>

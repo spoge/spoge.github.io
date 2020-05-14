@@ -37,7 +37,7 @@ const Terminal = ({ terminalHistory, onEnterPress }) => {
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
-      onEnterPress(inputText);
+      onEnterPress(inputText.toLowerCase());
       setInputText("");
       terminalInput.current.value = "";
     }
