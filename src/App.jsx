@@ -38,7 +38,7 @@ const App = ({ history }) => {
         <Route path="/fun">
           <Fun />
         </Route>
-        <Route>
+        <Route path="/">
           <Terminal
             terminalHistory={terminalHistory}
             onEnterPress={onTerminalEnter}
