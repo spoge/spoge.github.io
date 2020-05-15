@@ -1,8 +1,9 @@
 import React from "react";
 import TerminalArrow from "./TerminalArrow";
 import TerminalText from "./TerminalText";
+import brainfuck from "../brainfuck.js";
 
-const TerminalCommand = ({ history, text }) => {
+const TerminalCommand = ({ history, text, brainfuckMode }) => {
   switch (text.toLowerCase()) {
     case "":
       return <TerminalArrow />;
@@ -34,7 +35,28 @@ const TerminalCommand = ({ history, text }) => {
           <TerminalText>This is a terminal.</TerminalText>
         </div>
       );
+    case "brainfuck":
+      return (
+        <div>
+          <TerminalArrow text={text} />
+          <TerminalText>
+            {brainfuckMode
+              ? "Brainfuck interpreter initiated."
+              : "Brainfuck interpreter disabled."}
+          </TerminalText>
+        </div>
+      );
     default:
+      if (brainfuckMode) {
+        let brainfuckResult = brainfuck(text);
+        console.log(brainfuckResult);
+        return (
+          <div>
+            <TerminalArrow text={text} />
+            <TerminalText>{brainfuckResult}</TerminalText>
+          </div>
+        );
+      }
       return (
         <div>
           <TerminalArrow text={text} />

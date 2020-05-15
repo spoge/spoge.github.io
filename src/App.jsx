@@ -14,6 +14,8 @@ const App = ({ history }) => {
     </div>,
   ]);
 
+  const [brainfuckMode, setBrainfuckMode] = useState(false);
+
   const onTerminalEnter = (text) => {
     /**
      * Handling terminal input:
@@ -30,10 +32,24 @@ const App = ({ history }) => {
       history.push(validPathsAlias.find((entry) => entry[text])[text]);
     } else if (text === "clear") {
       setTerminalHistory([]);
+    } else if (text === "brainfuck") {
+      setTerminalHistory([
+        ...terminalHistory,
+        <TerminalCommand
+          history={history}
+          text={text}
+          brainfuckMode={!brainfuckMode}
+        />,
+      ]);
+      setBrainfuckMode(!brainfuckMode);
     } else {
       setTerminalHistory([
         ...terminalHistory,
-        <TerminalCommand history={history} text={text} />,
+        <TerminalCommand
+          history={history}
+          text={text}
+          brainfuckMode={brainfuckMode}
+        />,
       ]);
     }
   };
