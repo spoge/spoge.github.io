@@ -42,12 +42,14 @@
 .terminal-entry {
   white-space: pre-wrap;
   padding-bottom: 0.5em;
+  word-break: break-all;
 }
 
 .terminal-input {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  word-break: break-all;
 }
 
 .terminal-input-window {
@@ -55,6 +57,7 @@
   border: 0;
   outline: none;
 }
+
 /* Less shadow flickering
 @keyframes textShadow {
   0% {

@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Terminal.css";
 import TerminalArrow from "./TerminalArrow";
-import TerminalCaret from "./TerminalCaret";
 
 const Terminal = ({ terminalHistory, onEnterPress }) => {
   const terminalInput = useRef(null);
@@ -61,12 +60,15 @@ const Terminal = ({ terminalHistory, onEnterPress }) => {
         ))}
       </div>
       <div className="terminal-input">
-        <TerminalArrow text={inputText} paddingBottom={false} />
+        <TerminalArrow
+          text={inputText}
+          paddingBottom={false}
+          isCaretEnabled={isFlashing}
+        />
         <input
           ref={terminalInput}
           className="terminal-input-window"
           type="text"
-          maxLength="25"
           autoFocus={true}
           onFocus={() => {
             setIsTerminalFocused(true);
@@ -83,7 +85,6 @@ const Terminal = ({ terminalHistory, onEnterPress }) => {
           }}
           onKeyDown={handleKeyDown}
         />
-        <TerminalCaret enabled={isFlashing} />
       </div>
     </div>
   );
