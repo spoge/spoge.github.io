@@ -1,62 +1,7 @@
-.terminal {
-  background-color: black;
-  color: green;
-  font-family: ScreenMatrix;
-  padding: 1em;
-  height: 100%;
-  flex-grow: 1;
-}
-
-.terminal-content {
-  /* padding-bottom: 1em; */
-  -webkit-user-select: none; /* Safari */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* IE10+/Edge */
-  user-select: none; /* Standard */
-}
-
-.terminal-entry {
-  white-space: pre-wrap;
-  padding-bottom: 0.5em;
-}
-
-.terminal-input {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  /* padding: 1em; */
-}
-
-.terminal-input-arrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-right: 0.25em;
-  /* margin-bottom: 0.25em; */
-}
-
-.terminal-input-window {
-  width: 0em;
-  /* width: fit-content; */
-  /* padding: 0.5em; */
-  /* font-size: 1em; */
-  /* background-color: black; */
-  /* color: green; */
-  border: 0;
-  outline: none;
-  /* display: none; */
-}
-
-.terminal-input-text {
-  white-space: pre-wrap;
-}
-
 .terminal-input-cursor {
-  /* float: left; */
   width: 0.5em;
   height: 1em;
-  background: green;
-  /* background: #21f838; */
+  background: #5bf870;
 }
 
 .hide {

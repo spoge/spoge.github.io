@@ -7,7 +7,7 @@ const TerminalArrow = ({ text, paddingBottom = true }) => {
       className={`terminal-arrow ${paddingBottom ? "padding-bottom-1-2" : ""}`}
     >
       <div className="terminal-arrow-char">></div>
-      <div>{text}</div>
+      <div className="terminal-input-text">{text}</div>
     </div>
   );
 };
