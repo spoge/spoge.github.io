@@ -35,15 +35,27 @@ export const calculateMath = (rawInput) => {
     logDebug(input, shouldLogDebug);
   }
 
-  while (input.indexOf("*") !== -1) {
-    input = calcFirstOccurring(input, "*");
+  while (input.indexOf("*") !== -1 || input.indexOf("/") !== -1) {
+    const firstMulIndex = input.indexOf("*");
+    const firstDivIndex = input.indexOf("/");
+    if (
+      firstDivIndex === -1 ||
+      (firstDivIndex !== -1 &&
+        firstMulIndex !== -1 &&
+        firstMulIndex < firstDivIndex)
+    ) {
+      input = calcFirstOccurring(input, "*");
+    } else {
+      input = calcFirstOccurring(input, "/");
+    }
+
     logDebug(input, shouldLogDebug);
   }
 
-  while (input.indexOf("/") !== -1) {
-    input = calcFirstOccurring(input, "/");
-    logDebug(input, shouldLogDebug);
-  }
+  //   while (input.indexOf("/") !== -1) {
+  //     input = calcFirstOccurring(input, "/");
+  //     logDebug(input, shouldLogDebug);
+  //   }
 
   while (input.indexOf("+") !== -1) {
     input = calcFirstOccurring(input, "+");
