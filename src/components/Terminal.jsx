@@ -2,13 +2,16 @@ import React, { useEffect, useRef, useState } from "react";
 import "./Terminal.css";
 import TerminalArrow from "./TerminalArrow";
 
-const Terminal = ({ displayHistory, onEnterPress }) => {
+const Terminal = ({ displayHistory, inputHistory, onEnterPress }) => {
   const terminalInput = useRef(null);
 
   const [isTerminalFocused, setIsTerminalFocused] = useState(false);
   const [isFlashing, setIsFlashing] = useState(false);
   const [haveRecentlyTyped, setHaveRecentlyTyped] = useState(false);
   const [inputText, setInputText] = useState("");
+  const [inputHistoryIndex, setInputHistoryIndex] = useState(
+    inputHistory.length
+  );
 
   // Automatically focus on terminal input
   useEffect(() => {
@@ -36,13 +39,48 @@ const Terminal = ({ displayHistory, onEnterPress }) => {
     return () => clearInterval(interval);
   }, [haveRecentlyTyped, isFlashing, isTerminalFocused]);
 
-  // When 'Enter' key is pressed
+  // When any key is pressed
   const handleKeyDown = (e) => {
     switch (e.key) {
+      // commit inputted command
       case "Enter":
         onEnterPress(inputText.toLowerCase());
         setInputText("");
+        setInputHistoryIndex(inputHistory.length + 1);
         terminalInput.current.value = "";
+        break;
+      // go back through input history
+      case "ArrowUp":
+        let newArrowUpIndex = inputHistoryIndex - 1;
+        if (inputHistory.length === 0) {
+          break;
+        } else if (newArrowUpIndex < 0) {
+          setInputText(inputHistory[0]);
+          setInputHistoryIndex(0);
+          terminalInput.current.value = inputHistory[0];
+        } else {
+          setInputText(inputHistory[newArrowUpIndex]);
+          setInputHistoryIndex(newArrowUpIndex);
+          terminalInput.current.value = inputHistory[newArrowUpIndex];
+        }
+        break;
+      // go forward through input history
+      case "ArrowDown":
+        let newArrowDownIndex = inputHistoryIndex + 1;
+        if (newArrowDownIndex > inputHistory.length - 1) {
+          setInputText("");
+          setInputHistoryIndex(inputHistory.length);
+          terminalInput.current.value = "";
+        } else {
+          setInputText(inputHistory[newArrowDownIndex]);
+          setInputHistoryIndex(newArrowDownIndex);
+          terminalInput.current.value = inputHistory[newArrowDownIndex];
+        }
+        break;
+
+      case "ArrowLeft":
+      case "ArrowRight":
+        // TODO: Update caret position
         break;
       default:
         break;

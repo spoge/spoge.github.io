@@ -18,3 +18,16 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+/* .terminal-char {
+  width: 0.7em;
+  height: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.show-caret-on-char {
+  background-color: #5bf870;
+  color: #a4078f;
+} */

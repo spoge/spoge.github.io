@@ -8,6 +8,7 @@ const validPaths = ["fun", "/"];
 const validPathsAlias = [{ home: "/" }];
 
 const App = ({ history }) => {
+  const [inputHistory, setInputHistory] = useState([]);
   const [displayHistory, setDisplayHistory] = useState([
     <div>
       Enter <b>help</b> to see all available commands.
@@ -25,6 +26,7 @@ const App = ({ history }) => {
      * 4. Brainfuck interpreter?
      * 5. Cool commands in terminal!
      */
+    setInputHistory([...inputHistory, text]);
     if (validPaths.includes(text)) {
       history.push(text);
     } else if (
@@ -64,6 +66,7 @@ const App = ({ history }) => {
         <Route path="/">
           <Terminal
             displayHistory={displayHistory}
+            inputHistory={inputHistory}
             onEnterPress={onTerminalEnter}
           />
         </Route>

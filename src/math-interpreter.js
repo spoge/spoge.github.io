@@ -52,11 +52,6 @@ export const calculateMath = (rawInput) => {
     logDebug(input, shouldLogDebug);
   }
 
-  //   while (input.indexOf("/") !== -1) {
-  //     input = calcFirstOccurring(input, "/");
-  //     logDebug(input, shouldLogDebug);
-  //   }
-
   while (input.indexOf("+") !== -1) {
     input = calcFirstOccurring(input, "+");
     logDebug(input, shouldLogDebug);
