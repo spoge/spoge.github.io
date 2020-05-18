@@ -109,6 +109,14 @@ function interpret() {
 
 function doInterpret(text) {
   resetState();
+  if (
+    [...text].filter((c) =>
+      [">", "<", "+", "-", ".", ",", "[", "]"].includes(c)
+    ).length !== text.length
+  ) {
+    return "syntax-error";
+  }
+
   program = text;
   return interpret();
 }

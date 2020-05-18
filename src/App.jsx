@@ -8,7 +8,7 @@ const validPaths = ["fun", "/"];
 const validPathsAlias = [{ home: "/" }];
 
 const App = ({ history }) => {
-  const [terminalHistory, setTerminalHistory] = useState([
+  const [displayHistory, setDisplayHistory] = useState([
     <div>
       Enter <b>help</b> to see all available commands.
     </div>,
@@ -22,7 +22,8 @@ const App = ({ history }) => {
      * 1. Redirect with exact match? (i.e. "/fun" => "/fun")
      * 2. Redirect with alias? (i.e. "/home" => "/")
      * 3. Clear terminal?
-     * 4. Cool commands in terminal!
+     * 4. Brainfuck interpreter?
+     * 5. Cool commands in terminal!
      */
     if (validPaths.includes(text)) {
       history.push(text);
@@ -31,10 +32,10 @@ const App = ({ history }) => {
     ) {
       history.push(validPathsAlias.find((entry) => entry[text])[text]);
     } else if (text === "clear") {
-      setTerminalHistory([]);
+      setDisplayHistory([]);
     } else if (text === "brainfuck") {
-      setTerminalHistory([
-        ...terminalHistory,
+      setDisplayHistory([
+        ...displayHistory,
         <TerminalCommand
           history={history}
           text={text}
@@ -43,8 +44,8 @@ const App = ({ history }) => {
       ]);
       setBrainfuckMode(!brainfuckMode);
     } else {
-      setTerminalHistory([
-        ...terminalHistory,
+      setDisplayHistory([
+        ...displayHistory,
         <TerminalCommand
           history={history}
           text={text}
@@ -62,7 +63,7 @@ const App = ({ history }) => {
         </Route>
         <Route path="/">
           <Terminal
-            terminalHistory={terminalHistory}
+            terminalHistory={displayHistory}
             onEnterPress={onTerminalEnter}
           />
         </Route>

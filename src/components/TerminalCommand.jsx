@@ -1,7 +1,8 @@
 import React from "react";
 import TerminalArrow from "./TerminalArrow";
 import TerminalText from "./TerminalText";
-import brainfuck from "../brainfuck.js";
+import brainfuck from "../brainfuck-interpreter.js";
+import { calculateMath, isMath } from "../math-interpreter.js";
 
 const TerminalCommand = ({ history, text, brainfuckMode }) => {
   switch (text.toLowerCase()) {
@@ -22,6 +23,9 @@ const TerminalCommand = ({ history, text, brainfuckMode }) => {
           </TerminalText>
           <TerminalText>
             <b>fun</b> - fun games or something maybe
+          </TerminalText>
+          <TerminalText>
+            <b>brainfuck</b> - turn on/off brainfuck interpreter
           </TerminalText>
           <TerminalText>
             <b>clear</b> - clear terminal window
@@ -49,11 +53,30 @@ const TerminalCommand = ({ history, text, brainfuckMode }) => {
     default:
       if (brainfuckMode) {
         let brainfuckResult = brainfuck(text);
-        console.log(brainfuckResult);
+        if (brainfuckResult === "syntax-error") {
+          return (
+            <div>
+              <TerminalArrow text={text} />
+              <TerminalText>Brainfuck syntax error</TerminalText>
+              <TerminalText>
+                Turn off the interpreter by entering <b>brainfuck</b>
+              </TerminalText>
+            </div>
+          );
+        }
         return (
           <div>
             <TerminalArrow text={text} />
             <TerminalText>{brainfuckResult}</TerminalText>
+          </div>
+        );
+
+        // Is this math?
+      } else if (isMath(text)) {
+        return (
+          <div>
+            <TerminalArrow text={text} />
+            <TerminalText>{calculateMath(text)}</TerminalText>
           </div>
         );
       }
