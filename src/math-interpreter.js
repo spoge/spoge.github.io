@@ -22,6 +22,9 @@ export const calculateMath = (rawInput) => {
       getRelatedIndexOfParenthesesEnd(input, pStartIndex)
     );
     let result = calculateMath(substring);
+    if (result === "NaN") {
+      return result;
+    }
     input = input.split("(" + substring + ")").join(result);
     logDebug(input, shouldLogDebug);
   }
@@ -119,6 +122,10 @@ const calcFirstOccurring = (input, operation) => {
 
   let result = performOperation(firstNumber, secondNumber, operation);
 
+  if (isNaN(result)) {
+    return "NaN";
+  }
+
   return (
     input.substring(0, firstNumberIndex) +
     result +
@@ -187,6 +194,7 @@ export const isMath = (text) => {
     ).length === text.length
   );
 };
+
 // let expression = "((2+4^2)*2+2)";
 // console.log(expression);
 // console.log(calculateMath(expression));
