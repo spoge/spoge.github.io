@@ -16,6 +16,7 @@ export const calculateMath = (rawInput) => {
         input.slice(0, pStartIndex) +
         "*" +
         input.slice(pStartIndex, input.length);
+      pStartIndex += 1; // move index since we inserted a char
     }
     let substring = input.substring(
       pStartIndex + 1,

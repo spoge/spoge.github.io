@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "./Terminal.css";
 import TerminalArrow from "./TerminalArrow";
 
-const Terminal = ({ terminalHistory, onEnterPress }) => {
+const Terminal = ({ displayHistory, onEnterPress }) => {
   const terminalInput = useRef(null);
 
   const [isTerminalFocused, setIsTerminalFocused] = useState(false);
@@ -16,10 +16,10 @@ const Terminal = ({ terminalHistory, onEnterPress }) => {
     return () => {};
   }, []);
 
-  // Scroll to bottom when terminalHistory is updated
+  // Scroll to bottom when displayHistory is updated
   useEffect(() => {
     terminalInput.current.scrollIntoView();
-  }, [terminalHistory]);
+  }, [displayHistory]);
 
   // Flash caret every second
   useEffect(() => {
@@ -38,10 +38,14 @@ const Terminal = ({ terminalHistory, onEnterPress }) => {
 
   // When 'Enter' key is pressed
   const handleKeyDown = (e) => {
-    if (e.key === "Enter") {
-      onEnterPress(inputText.toLowerCase());
-      setInputText("");
-      terminalInput.current.value = "";
+    switch (e.key) {
+      case "Enter":
+        onEnterPress(inputText.toLowerCase());
+        setInputText("");
+        terminalInput.current.value = "";
+        break;
+      default:
+        break;
     }
   };
 
@@ -53,7 +57,7 @@ const Terminal = ({ terminalHistory, onEnterPress }) => {
       }}
     >
       <div className="terminal-content">
-        {terminalHistory.map((entry, index) => (
+        {displayHistory.map((entry, index) => (
           <div key={index} className="terminal-entry">
             {entry}
           </div>

@@ -63,7 +63,7 @@ const App = ({ history }) => {
         </Route>
         <Route path="/">
           <Terminal
-            terminalHistory={displayHistory}
+            displayHistory={displayHistory}
             onEnterPress={onTerminalEnter}
           />
         </Route>
