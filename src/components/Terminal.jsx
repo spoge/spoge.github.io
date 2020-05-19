@@ -89,44 +89,48 @@ const Terminal = ({ displayHistory, inputHistory, onEnterPress }) => {
 
   return (
     <div
-      className="terminal"
+      className="terminal-wrapper"
       onClick={() => {
         terminalInput.current.focus();
       }}
     >
-      <div className="terminal-content">
-        {displayHistory.map((entry, index) => (
-          <div key={index} className="terminal-entry">
-            {entry}
-          </div>
-        ))}
-      </div>
-      <div className="terminal-input">
-        <TerminalArrow
-          text={inputText}
-          paddingBottom={false}
-          isCaretEnabled={isFlashing}
-        />
-        <input
-          ref={terminalInput}
-          className="terminal-input-window"
-          type="text"
-          autoFocus={true}
-          onFocus={() => {
-            setIsTerminalFocused(true);
-            setIsFlashing(false);
-          }}
-          onBlur={() => {
-            setIsTerminalFocused(false);
-            setIsFlashing(true);
-          }}
-          onChange={(e) => {
-            setInputText(e.target.value);
-            setHaveRecentlyTyped(true);
-            setIsFlashing(true);
-          }}
-          onKeyDown={handleKeyDown}
-        />
+      <div className="crt-lines"></div>
+      <div className="radial-background"></div>
+      <div className="terminal">
+        <div className="terminal-content">
+          {displayHistory.map((entry, index) => (
+            <div key={index} className="terminal-entry">
+              {entry}
+            </div>
+          ))}
+        </div>
+        <div className="terminal-input">
+          <TerminalArrow
+            text={inputText}
+            paddingBottom={false}
+            isCaretEnabled={isFlashing}
+          />
+          <input
+            ref={terminalInput}
+            className="terminal-input-window"
+            type="text"
+            autoFocus={true}
+            onFocus={() => {
+              setIsTerminalFocused(true);
+              setIsFlashing(false);
+            }}
+            onBlur={() => {
+              setIsTerminalFocused(false);
+              setIsFlashing(true);
+            }}
+            onChange={(e) => {
+              setInputText(e.target.value);
+              setHaveRecentlyTyped(true);
+              setIsFlashing(true);
+            }}
+            onKeyDown={handleKeyDown}
+          />
+        </div>
       </div>
     </div>
   );

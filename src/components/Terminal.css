@@ -1,35 +1,45 @@
-.terminal {
-  /* background-color: #000; */
-  background-image: radial-gradient(ellipse, #5bf87033 10%, #00000099 90%);
-  color: #5bf870;
-  font-family: ScreenMatrix;
-  text-transform: uppercase;
-  text-shadow: 0 0 5px #c8c8c8;
-  padding: 1em;
+.terminal-wrapper {
   height: 100%;
   flex-grow: 1;
-  animation: textShadowOriginal 1.6s infinite;
 }
 
-/* TODO: Fix scrolling beyond crt effects */
-.terminal:before {
+.crt-lines,
+.radial-background {
   content: " ";
   display: block;
-  position: absolute;
+  position: fixed;
   min-height: 100%;
   height: inherit;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
+  pointer-events: none;
+}
+
+.crt-lines {
   background: linear-gradient(
     to bottom,
     rgba(18, 16, 16, 0.1) 50%,
     rgba(0, 0, 0, 0.25) 50%
   );
   background-size: 100% 8px;
-  z-index: 2;
+  z-index: 10;
+}
+
+.radial-background {
+  background-image: radial-gradient(ellipse, #5bf87033 10%, #00000099 90%);
   pointer-events: none;
+}
+
+.terminal {
+  position: relative;
+  color: #5bf870;
+  font-family: ScreenMatrix;
+  text-transform: uppercase;
+  text-shadow: 0 0 5px #c8c8c8;
+  padding: 1em;
+  animation: textShadowOriginal 1.6s infinite;
 }
 
 .terminal-content {
