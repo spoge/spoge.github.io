@@ -1,5 +1,5 @@
 export const calculateMath = (rawInput) => {
-  let input = rawInput.split(" ").join("");
+  let input = rawInput.split(" ").join("").split(",").join(".");
 
   if (!isValid(input)) {
     return "NaN";
@@ -8,19 +8,24 @@ export const calculateMath = (rawInput) => {
   let shouldLogDebug = false;
   logDebug(input, shouldLogDebug);
 
+  // Insert * before ( if there is a number directly in front
+  input = [...input]
+    .map((c, i) => {
+      if (
+        i !== 0 &&
+        c === "(" &&
+        !["+", "-", "*", "/", "^", "("].includes(input[i - 1])
+      ) {
+        return "*" + c;
+      }
+      return c;
+    })
+    .join("");
+
   while (input.indexOf("(") !== -1) {
-    let pStartIndex = input.indexOf("(");
-    // Insert * before ( if there is a number directly in front
-    if (pStartIndex - 1 >= 0 && !isNaN(input[pStartIndex - 1])) {
-      input =
-        input.slice(0, pStartIndex) +
-        "*" +
-        input.slice(pStartIndex, input.length);
-      pStartIndex += 1; // move index since we inserted a char
-    }
     let substring = input.substring(
-      pStartIndex + 1,
-      getRelatedIndexOfParenthesesEnd(input, pStartIndex)
+      input.indexOf("(") + 1,
+      getRelatedIndexOfParenthesesEnd(input, input.indexOf("("))
     );
     let result = calculateMath(substring);
     if (result === "NaN") {
@@ -85,7 +90,9 @@ const isValid = (input) => {
       character !== "-" &&
       character !== "*" &&
       character !== "/" &&
-      character !== "^"
+      character !== "^" &&
+      character !== "." &&
+      character !== ","
     ) {
       return false;
     }
@@ -143,15 +150,16 @@ const calcFirstOccurring = (input, operation) => {
 
 const performOperation = (a, b, operation) => {
   if (operation === "+") {
-    return parseInt(a) + parseInt(b);
+    console.log(a + " + " + b);
+    return Math.round((Number(a) + Number(b)) * 1e12) / 1e12;
   } else if (operation === "-") {
-    return parseInt(a) - parseInt(b);
+    return Math.round((Number(a) - Number(b)) * 1e12) / 1e12;
   } else if (operation === "*") {
-    return parseInt(a) * parseInt(b);
+    return Math.round(Number(a) * Number(b) * 1e12) / 1e12;
   } else if (operation === "/") {
-    return parseInt(a) / parseInt(b);
+    return Math.round((Number(a) / Number(b)) * 1e12) / 1e12;
   } else if (operation === "^") {
-    return Math.pow(parseInt(a), parseInt(b));
+    return Math.round(Math.pow(parseFloat(a), parseFloat(b)) * 1e12) / 1e12;
   }
 };
 
@@ -164,7 +172,7 @@ const getStartIndexOfNumberBeforeOperatorIndex = (input, operatorIndex) => {
       return 0;
     }
     let character = input.charAt(index);
-    if (isNaN(character) && character !== " ") {
+    if (isNaN(character) && ![" ", ",", "."].includes(character)) {
       searching = false;
       return index + 1;
     }
@@ -183,7 +191,7 @@ const getEndIndexOfNumberAfterOperatorIndex = (input, operatorIndex) => {
       return input.length;
     }
     let character = input.charAt(index);
-    if (isNaN(character) && character !== " ") {
+    if (isNaN(character) && ![" ", ",", "."].includes(character)) {
       searching = false;
       return index;
     }
