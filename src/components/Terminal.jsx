@@ -1,10 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Terminal.css";
-import TerminalArrow from "./TerminalArrow";
+import TerminalInput from "./TerminalInput";
 
 const Terminal = ({ displayHistory, inputHistory, onEnterPress }) => {
-  const terminalInput = useRef(null);
-
   const [isTerminalFocused, setIsTerminalFocused] = useState(false);
   const [isFlashing, setIsFlashing] = useState(false);
   const [haveRecentlyTyped, setHaveRecentlyTyped] = useState(false);
@@ -12,6 +10,9 @@ const Terminal = ({ displayHistory, inputHistory, onEnterPress }) => {
   const [inputHistoryIndex, setInputHistoryIndex] = useState(
     inputHistory.length
   );
+  const [caretPosition, setCaretPosition] = useState(0);
+
+  const terminalInput = useRef(null);
 
   // Automatically focus on terminal input
   useEffect(() => {
@@ -39,6 +40,10 @@ const Terminal = ({ displayHistory, inputHistory, onEnterPress }) => {
     return () => clearInterval(interval);
   }, [haveRecentlyTyped, isFlashing, isTerminalFocused]);
 
+  const clamp = (value, floor, ceil) => {
+    return value < floor ? floor : value > ceil ? ceil : value;
+  };
+
   // When any key is pressed
   const handleKeyDown = (e) => {
     switch (e.key) {
@@ -51,36 +56,63 @@ const Terminal = ({ displayHistory, inputHistory, onEnterPress }) => {
         break;
       // go back through input history
       case "ArrowUp":
+        e.preventDefault();
         let newArrowUpIndex = inputHistoryIndex - 1;
         if (inputHistory.length === 0) {
           break;
         } else if (newArrowUpIndex < 0) {
-          setInputText(inputHistory[0]);
+          let newInputText = inputHistory[0];
+          setInputText(newInputText);
           setInputHistoryIndex(0);
-          terminalInput.current.value = inputHistory[0];
+          terminalInput.current.value = newInputText;
+          setCaretPosition(newInputText.length);
         } else {
-          setInputText(inputHistory[newArrowUpIndex]);
+          let newInputText = inputHistory[newArrowUpIndex];
+          setInputText(newInputText);
           setInputHistoryIndex(newArrowUpIndex);
-          terminalInput.current.value = inputHistory[newArrowUpIndex];
+          terminalInput.current.value = newInputText;
+          setCaretPosition(newInputText.length);
         }
         break;
       // go forward through input history
       case "ArrowDown":
+        e.preventDefault();
         let newArrowDownIndex = inputHistoryIndex + 1;
         if (newArrowDownIndex > inputHistory.length - 1) {
           setInputText("");
           setInputHistoryIndex(inputHistory.length);
           terminalInput.current.value = "";
+          setCaretPosition(0);
         } else {
-          setInputText(inputHistory[newArrowDownIndex]);
+          let newInputText = inputHistory[newArrowDownIndex];
+          setInputText(newInputText);
           setInputHistoryIndex(newArrowDownIndex);
-          terminalInput.current.value = inputHistory[newArrowDownIndex];
+          terminalInput.current.value = newInputText;
+          setCaretPosition(newInputText.length);
         }
         break;
 
       case "ArrowLeft":
+        e.preventDefault();
+        let alc = clamp(
+          terminalInput.current.selectionStart - 1,
+          0,
+          inputText.length
+        );
+        setCaretPosition(alc);
+        terminalInput.current.selectionStart = alc;
+        terminalInput.current.selectionEnd = alc;
+        break;
       case "ArrowRight":
-        // TODO: Update caret position
+        e.preventDefault();
+        let arc = clamp(
+          terminalInput.current.selectionStart + 1,
+          0,
+          inputText.length
+        );
+        setCaretPosition(arc);
+        terminalInput.current.selectionStart = arc;
+        terminalInput.current.selectionEnd = arc;
         break;
       default:
         break;
@@ -105,10 +137,11 @@ const Terminal = ({ displayHistory, inputHistory, onEnterPress }) => {
           ))}
         </div>
         <div className="terminal-input">
-          <TerminalArrow
+          <TerminalInput
             text={inputText}
             paddingBottom={false}
             isCaretEnabled={isFlashing}
+            caretPosition={caretPosition}
           />
           <input
             ref={terminalInput}
@@ -126,9 +159,16 @@ const Terminal = ({ displayHistory, inputHistory, onEnterPress }) => {
             onChange={(e) => {
               setInputText(e.target.value);
               setHaveRecentlyTyped(true);
+              setCaretPosition(
+                clamp(caretPosition + 1, 0, e.target.value.length)
+              );
               setIsFlashing(true);
             }}
-            onKeyDown={handleKeyDown}
+            onKeyDown={(e) => {
+              handleKeyDown(e);
+              setHaveRecentlyTyped(true);
+              setIsFlashing(true);
+            }}
           />
         </div>
       </div>

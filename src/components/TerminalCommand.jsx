@@ -1,5 +1,5 @@
 import React from "react";
-import TerminalArrow from "./TerminalArrow";
+import TerminalInput from "./TerminalInput";
 import TerminalText from "./TerminalText";
 import brainfuck from "../brainfuck-interpreter.js";
 import { calculateMath, isMath } from "../math-interpreter.js";
@@ -7,11 +7,11 @@ import { calculateMath, isMath } from "../math-interpreter.js";
 const TerminalCommand = ({ history, text, brainfuckMode }) => {
   switch (text.toLowerCase()) {
     case "":
-      return <TerminalArrow />;
+      return <TerminalInput />;
     case "help":
       return (
         <div>
-          <TerminalArrow text={text} />
+          <TerminalInput text={text} />
           <TerminalText>
             <b>help</b> - see all commands
           </TerminalText>
@@ -35,14 +35,14 @@ const TerminalCommand = ({ history, text, brainfuckMode }) => {
     case "about":
       return (
         <div>
-          <TerminalArrow text={text} />
+          <TerminalInput text={text} />
           <TerminalText>This is a terminal.</TerminalText>
         </div>
       );
     case "brainfuck":
       return (
         <div>
-          <TerminalArrow text={text} />
+          <TerminalInput text={text} />
           <TerminalText>
             {brainfuckMode
               ? "Brainfuck interpreter initiated."
@@ -56,7 +56,7 @@ const TerminalCommand = ({ history, text, brainfuckMode }) => {
         if (brainfuckResult === "syntax-error") {
           return (
             <div>
-              <TerminalArrow text={text} />
+              <TerminalInput text={text} />
               <TerminalText>Brainfuck syntax error</TerminalText>
               <TerminalText>
                 Turn off the interpreter by entering <b>brainfuck</b>
@@ -66,7 +66,7 @@ const TerminalCommand = ({ history, text, brainfuckMode }) => {
         }
         return (
           <div>
-            <TerminalArrow text={text} />
+            <TerminalInput text={text} />
             <TerminalText>{brainfuckResult}</TerminalText>
           </div>
         );
@@ -75,14 +75,14 @@ const TerminalCommand = ({ history, text, brainfuckMode }) => {
       } else if (isMath(text)) {
         return (
           <div>
-            <TerminalArrow text={text} />
+            <TerminalInput text={text} />
             <TerminalText>{calculateMath(text)}</TerminalText>
           </div>
         );
       }
       return (
         <div>
-          <TerminalArrow text={text} />
+          <TerminalInput text={text} />
           <TerminalText>Unknown command.</TerminalText>
           <TerminalText>
             Enter <b>help</b> to see all available commands.
