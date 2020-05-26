@@ -66,6 +66,13 @@
   width: 0em;
   border: 0;
   outline: none;
+  background-color: #00000000;
+  cursor: default;
+
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
 }
 
 /* Less shadow flickering
