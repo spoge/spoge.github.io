@@ -4,7 +4,16 @@ import TerminalText from "./TerminalText";
 import brainfuck from "../brainfuck-interpreter.js";
 import { calculateMath, isMath } from "../math-interpreter.js";
 
-const TerminalCommand = ({ history, text, brainfuckMode }) => {
+const TerminalCommand = ({
+  history,
+  text,
+  brainfuckMode = false,
+  ignoreCommand = false,
+}) => {
+  if (ignoreCommand) {
+    return <TerminalInput text={text} />;
+  }
+
   switch (text.toLowerCase()) {
     case "":
       return <TerminalInput />;

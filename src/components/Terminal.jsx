@@ -10,7 +10,7 @@ const Terminal = ({ displayHistory, inputHistory, onEnterPress }) => {
   const [inputHistoryIndex, setInputHistoryIndex] = useState(
     inputHistory.length
   );
-  const [caretPosition, setCaretPosition] = useState(0);
+  const [caretPositionState, setCaretPositionState] = useState(0);
 
   const terminalInput = useRef(null);
 
@@ -44,52 +44,103 @@ const Terminal = ({ displayHistory, inputHistory, onEnterPress }) => {
     return value < floor ? floor : value > ceil ? ceil : value;
   };
 
+  const setInputValue = (text) => {
+    setInputText(text);
+    terminalInput.current.value = text;
+  };
+
+  const setInputValueToHistoryAt = (index) => {
+    if (inputHistory.length > 0 && index < inputHistory.length) {
+      let historyText = inputHistory[index];
+      setInputHistoryIndex(index);
+      setInputValue(historyText);
+      setCaretPosition(historyText.length);
+    } else {
+      setInputHistoryIndex(inputHistory.length);
+      setInputValue("");
+      setCaretPosition(0);
+    }
+  };
+
+  const setCaretPosition = (newCaretPosition) => {
+    setCaretPositionState(newCaretPosition);
+    terminalInput.current.selectionStart = newCaretPosition;
+    terminalInput.current.selectionEnd = newCaretPosition;
+  };
+
   // When any key is pressed
   const handleKeyDown = (e) => {
     switch (e.key) {
       // commit inputted command
       case "Enter":
         onEnterPress(inputText.toLowerCase());
-        setInputText("");
         setInputHistoryIndex(inputHistory.length + 1);
-        terminalInput.current.value = "";
+        setInputValue("");
+        setCaretPosition(0);
         break;
+      case "c":
+        if (e.ctrlKey) {
+          onEnterPress(inputText.toLowerCase(), true);
+          setInputHistoryIndex(inputHistory.length + 1);
+          setInputValue("");
+          setCaretPosition(0);
+        }
+        break;
+      case "Delete":
+        e.preventDefault();
+        if (caretPositionState >= 0 && caretPositionState < inputText.length) {
+          setInputValue(
+            inputText.slice(0, caretPositionState) +
+              inputText.slice(caretPositionState + 1)
+          );
+          setCaretPosition(caretPositionState);
+        }
+        break;
+      case "Backspace":
+        e.preventDefault();
+        if (caretPositionState > 0 && caretPositionState <= inputText.length) {
+          setInputValue(
+            inputText.slice(0, caretPositionState - 1) +
+              inputText.slice(caretPositionState)
+          );
+          setCaretPosition(caretPositionState - 1);
+        }
+        break;
+      case "Home":
+        e.preventDefault();
+        setCaretPosition(0);
+        break;
+      case "End":
+        e.preventDefault();
+        setCaretPosition(inputText.length);
+        break;
+
       // go back through input history
+      case "PageUp":
+        e.preventDefault();
+        setInputValueToHistoryAt(0);
+        break;
+
+      case "PageDown":
+        e.preventDefault();
+        setInputValueToHistoryAt(inputHistory.length - 1);
+        break;
+
       case "ArrowUp":
         e.preventDefault();
         let newArrowUpIndex = inputHistoryIndex - 1;
         if (inputHistory.length === 0) {
           break;
         } else if (newArrowUpIndex < 0) {
-          let newInputText = inputHistory[0];
-          setInputText(newInputText);
-          setInputHistoryIndex(0);
-          terminalInput.current.value = newInputText;
-          setCaretPosition(newInputText.length);
+          setInputValueToHistoryAt(0);
         } else {
-          let newInputText = inputHistory[newArrowUpIndex];
-          setInputText(newInputText);
-          setInputHistoryIndex(newArrowUpIndex);
-          terminalInput.current.value = newInputText;
-          setCaretPosition(newInputText.length);
+          setInputValueToHistoryAt(newArrowUpIndex);
         }
         break;
       // go forward through input history
       case "ArrowDown":
         e.preventDefault();
-        let newArrowDownIndex = inputHistoryIndex + 1;
-        if (newArrowDownIndex > inputHistory.length - 1) {
-          setInputText("");
-          setInputHistoryIndex(inputHistory.length);
-          terminalInput.current.value = "";
-          setCaretPosition(0);
-        } else {
-          let newInputText = inputHistory[newArrowDownIndex];
-          setInputText(newInputText);
-          setInputHistoryIndex(newArrowDownIndex);
-          terminalInput.current.value = newInputText;
-          setCaretPosition(newInputText.length);
-        }
+        setInputValueToHistoryAt(inputHistoryIndex + 1);
         break;
 
       case "ArrowLeft":
@@ -100,8 +151,6 @@ const Terminal = ({ displayHistory, inputHistory, onEnterPress }) => {
           inputText.length
         );
         setCaretPosition(alc);
-        terminalInput.current.selectionStart = alc;
-        terminalInput.current.selectionEnd = alc;
         break;
       case "ArrowRight":
         e.preventDefault();
@@ -111,8 +160,6 @@ const Terminal = ({ displayHistory, inputHistory, onEnterPress }) => {
           inputText.length
         );
         setCaretPosition(arc);
-        terminalInput.current.selectionStart = arc;
-        terminalInput.current.selectionEnd = arc;
         break;
       default:
         break;
@@ -141,7 +188,7 @@ const Terminal = ({ displayHistory, inputHistory, onEnterPress }) => {
             text={inputText}
             paddingBottom={false}
             isCaretEnabled={isFlashing}
-            caretPosition={caretPosition}
+            caretPosition={caretPositionState}
           />
           <input
             ref={terminalInput}
@@ -160,7 +207,7 @@ const Terminal = ({ displayHistory, inputHistory, onEnterPress }) => {
               setInputText(e.target.value);
               setHaveRecentlyTyped(true);
               setCaretPosition(
-                clamp(caretPosition + 1, 0, e.target.value.length)
+                clamp(caretPositionState + 1, 0, e.target.value.length)
               );
               setIsFlashing(true);
             }}
