@@ -1,5 +1,6 @@
 .terminal-input {
   display: flex;
+  align-items: flex-start;
   -webkit-user-select: none; /* Safari */
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+/Edge */
@@ -8,7 +9,6 @@
 
 .terminal-input-arrow {
   padding-right: 0.25em;
-  margin-top: 2px;
 }
 
 .terminal-input-text {

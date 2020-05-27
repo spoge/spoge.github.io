@@ -23,7 +23,7 @@ const Terminal = ({ displayHistory, inputHistory, onEnterPress }) => {
   // Scroll to bottom when displayHistory is updated
   useEffect(() => {
     terminalInput.current.scrollIntoView();
-  }, [displayHistory]);
+  }, [displayHistory, inputText]);
 
   // Flash caret every second
   useEffect(() => {
@@ -173,6 +173,7 @@ const Terminal = ({ displayHistory, inputHistory, onEnterPress }) => {
         terminalInput.current.focus();
       }}
     >
+      <div className="scanline"></div>
       <div className="crt-lines"></div>
       <div className="radial-background"></div>
       <div className="terminal">
