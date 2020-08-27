@@ -87,7 +87,7 @@ const App = ({ history }) => {
 };
 
 const Life = () => {
-  window.location.assign(window.location.href + "game-of-life");
+  window.location.assign(window.location.origin + "/game-of-life");
   return <div></div>;
 };
 
