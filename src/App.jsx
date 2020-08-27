@@ -4,8 +4,8 @@ import "./App.css";
 import Terminal from "./components/Terminal";
 import TerminalCommand from "./components/TerminalCommand";
 
-const validPaths = ["fun", "/"];
-const validPathsAlias = [{ home: "/" }];
+const validPaths = ["life", "/"];
+const validPathsAlias = [{ home: "/", conway: "life" }];
 
 const App = ({ history }) => {
   const [inputHistory, setInputHistory] = useState([]);
@@ -71,8 +71,8 @@ const App = ({ history }) => {
   return (
     <div className="app">
       <Switch>
-        <Route path="/fun">
-          <Fun />
+        <Route path="/life">
+          <Life />
         </Route>
         <Route path="/">
           <Terminal
@@ -86,9 +86,9 @@ const App = ({ history }) => {
   );
 };
 
-// Placeholder
-const Fun = () => {
-  return <div>Cool stuffs and games (maybe later?)!</div>;
+const Life = () => {
+  window.location.assign("https://sboge.no/game-of-life");
+  return <div></div>;
 };
 
 export default withRouter(App);

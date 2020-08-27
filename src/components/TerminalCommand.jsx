@@ -31,7 +31,7 @@ const TerminalCommand = ({
             <b>/</b> or <b>home</b> - go home
           </TerminalText>
           <TerminalText>
-            <b>fun</b> - fun games or something maybe
+            <b>life</b> - Conway's Game of Life
           </TerminalText>
           <TerminalText>
             <b>brainfuck</b> - turn on/off brainfuck interpreter
