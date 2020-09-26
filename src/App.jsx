@@ -4,8 +4,8 @@ import "./App.css";
 import Terminal from "./components/Terminal";
 import TerminalCommand from "./components/TerminalCommand";
 
-const validPaths = ["life", "/"];
-const validPathsAlias = [{ home: "/", conway: "life" }];
+const validPaths = ["life", "pokemon", "/"];
+const validPathsAlias = [{ home: "/", conway: "life", pokebox: "pokemon" }];
 
 const App = ({ history }) => {
   const [inputHistory, setInputHistory] = useState([]);
