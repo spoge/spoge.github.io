@@ -34,6 +34,9 @@ const TerminalCommand = ({
             <b>life</b> - Conway's Game of Life
           </TerminalText>
           <TerminalText>
+            <b>pokemon</b> - Pokémon box calculator
+          </TerminalText>
+          <TerminalText>
             <b>brainfuck</b> - turn on/off brainfuck interpreter
           </TerminalText>
           <TerminalText>

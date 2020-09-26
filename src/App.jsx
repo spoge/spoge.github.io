@@ -74,6 +74,9 @@ const App = ({ history }) => {
         <Route path="/life">
           <Life />
         </Route>
+        <Route path="/pokemon">
+          <Pokemon />
+        </Route>
         <Route path="/">
           <Terminal
             displayHistory={displayHistory}
@@ -88,6 +91,11 @@ const App = ({ history }) => {
 
 const Life = () => {
   window.location.assign(window.location.origin + "/game-of-life");
+  return <div></div>;
+};
+
+const Pokemon = () => {
+  window.location.assign(window.location.origin + "/pokemon-box-calculator");
   return <div></div>;
 };
 
