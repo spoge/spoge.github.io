@@ -95,7 +95,7 @@ const Life = () => {
 };
 
 const Pokemon = () => {
-  window.location.assign(window.location.origin + "/pokemon-box-calculator");
+  window.location.assign(window.location.origin + "/pokebox-viewer");
   return <div></div>;
 };
 
