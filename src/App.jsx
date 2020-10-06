@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route, withRouter } from "react-router-dom";
 import "./App.css";
-import TerminalWindow from "./components/TerminalWindow";
+import TerminalWindow from "./components/terminal/TerminalWindow";
 
 const App = () => {
   return (

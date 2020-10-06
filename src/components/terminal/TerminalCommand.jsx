@@ -1,8 +1,8 @@
 import React from "react";
 import TerminalInput from "./TerminalInput";
 import TerminalText from "./TerminalText";
-import brainfuck from "../brainfuck-interpreter.js";
-import { calculateMath, isMath } from "../math-interpreter.js";
+import brainfuck from "../../brainfuck-interpreter.js";
+import { calculateMath, isMath } from "../../math-interpreter.js";
 
 const TerminalCommand = ({
   history,
