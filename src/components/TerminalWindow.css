@@ -1,0 +1,18 @@
+.terminal-window {
+  background-color: #282c34;
+  color: white;
+  /* background-color: black;
+  color: green; */
+  min-height: 100vh;
+  /* font-size: 28px; */
+  font-size: calc(12px + 2vmin);
+  /* font-family: ScreenMatrix; */
+
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.terminal-window > * {
+  flex-shrink: 0;
+}
