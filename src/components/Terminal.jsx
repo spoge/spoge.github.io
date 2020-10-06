@@ -73,9 +73,10 @@ const Terminal = ({ displayHistory, inputHistory, onEnterPress }) => {
     switch (e.key) {
       // commit inputted command
       case "Enter":
-        onEnterPress(inputText.toLowerCase());
-        setInputHistoryIndex(inputHistory.length + 1);
+        const cmdInput = inputText.toLocaleLowerCase();
         setInputValue("");
+        onEnterPress(cmdInput);
+        setInputHistoryIndex(inputHistory.length + 1);
         setCaretPosition(0);
         break;
       case "c":
