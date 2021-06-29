@@ -7,6 +7,9 @@ const App = () => {
   return (
     <div className="app">
       <Switch>
+        <Route path="/blog">
+          <Blog />
+        </Route>
         <Route path="/life">
           <Life />
         </Route>
@@ -22,6 +25,11 @@ const App = () => {
       </Switch>
     </div>
   );
+};
+
+const Blog = () => {
+  window.location.assign(window.location.origin + "/blog");
+  return <div></div>;
 };
 
 const Life = () => {

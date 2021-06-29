@@ -31,6 +31,9 @@ const TerminalCommand = ({
             <b>/</b> or <b>home</b> - go home
           </TerminalText>
           <TerminalText>
+            <b>blog</b> - My personal blog
+          </TerminalText>
+          <TerminalText>
             <b>life</b> - Conway's Game of Life
           </TerminalText>
           <TerminalText>
