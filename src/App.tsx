@@ -19,7 +19,7 @@ const App = () => {
               <Card
                 image={`${process.env.PUBLIC_URL}/img/icons/blog_icon.png`}
                 title="Blog"
-                text="This is my personal tech blog. Contains a guide to create an ultimate modded GBA."
+                text="This is my personal tech blog. Contains a guide to create the ultimate modded GBA."
               />
             </Link>
             <Link to="/projects">
