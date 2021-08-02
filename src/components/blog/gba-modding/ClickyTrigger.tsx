@@ -12,12 +12,12 @@ const ClickyTrigger = () => (
       like on its sibling system.
     </p>
     <Image
-      path="images/triggers/gba_trigger_desolder.jpeg"
+      path="img/gba-modding/triggers/gba_trigger_desolder.jpeg"
       alt="desoldering trigger"
     />
     <p>You need to desolder the two outer tin points near the trigger.</p>
     <Image
-      path="images/triggers/gba_trigger_desolder_pump.jpeg"
+      path="img/gba-modding/triggers/gba_trigger_desolder_pump.jpeg"
       alt="using desolder pump on trigger"
     />
     <p>
@@ -26,7 +26,7 @@ const ClickyTrigger = () => (
       to show me holding both at the same time.)
     </p>
     <Image
-      path="images/triggers/gba_trigger_pulled_out.jpeg"
+      path="img/gba-modding/triggers/gba_trigger_pulled_out.jpeg"
       alt="trigger pulled out"
     />
     <p>
@@ -34,7 +34,7 @@ const ClickyTrigger = () => (
       socket.
     </p>
     <Image
-      path="images/triggers/gba_trigger_replaced.jpeg"
+      path="img/gba-modding/triggers/gba_trigger_replaced.jpeg"
       alt="trigger replaced"
     />
     <p>

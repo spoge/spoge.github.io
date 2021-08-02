@@ -14,7 +14,7 @@ const Header = () => {
           <Link to="/blog">
             <div className="header-menu-item">Blog</div>
           </Link>
-          <Link to="/">
+          <Link to="/projects">
             <div className="header-menu-item">Projects</div>
           </Link>
           <Link to={{ pathname: "https://github.com/spoge" }} target="_blank">

@@ -14,7 +14,7 @@ const UsbCRechargeable = () => (
       compartment.
     </p>
     <Image
-      path="images/battery/gba_metal_thingy.jpeg"
+      path="img/gba-modding/battery/gba_metal_thingy.jpeg"
       alt="metal thingy that must be removed"
     />
     <p>
@@ -22,7 +22,7 @@ const UsbCRechargeable = () => (
       It should be quite easy to just slide off.
     </p>
     <Image
-      path="images/battery/gba_battery_insert.jpeg"
+      path="img/gba-modding/battery/gba_battery_insert.jpeg"
       alt="inserting battery"
     />
     <p>
@@ -30,7 +30,7 @@ const UsbCRechargeable = () => (
       it should be fairly easy. Put the back cover on, and that should be it!
     </p>
     <Image
-      path="images/battery/gba_cover_fit.jpeg"
+      path="img/gba-modding/battery/gba_cover_fit.jpeg"
       alt="if the cover doesn't close correctly"
     />
     <p>

@@ -12,13 +12,16 @@ const IpsScreen = () => (
       todays standard. Luckily we have an excellent solution: The IPS screen
       with 10 levels of brightness controls.
     </p>
-    <Image path="images/screen/gba_shell.jpeg" alt="shell of the gba" />
+    <Image
+      path="img/gba-modding/screen/gba_shell.jpeg"
+      alt="shell of the gba"
+    />
     <p>
       It's recommended to get yourself a shell that is pre-cut for the IPS
       screen. If not it is possible to cut the shell yourself.
     </p>
     <Image
-      path="images/screen/gba_screen_inserted.jpeg"
+      path="img/gba-modding/screen/gba_screen_inserted.jpeg"
       alt="backside of the mounted screen"
     />
     <p>
@@ -35,7 +38,7 @@ const IpsScreen = () => (
       side. Maintain firm pressure.
     </p>
     <Image
-      path="images/screen/gba_screen_replaced.jpeg"
+      path="img/gba-modding/screen/gba_screen_replaced.jpeg"
       alt="if the cover doesn't close correctly"
     />
     <p> The screen and lens should now be perfecly placed.</p>
@@ -49,7 +52,7 @@ const IpsScreen = () => (
       follow along.
     </p>
     <Image
-      path="images/screen/gba_screen_ribbon_solder.jpeg"
+      path="img/gba-modding/screen/gba_screen_ribbon_solder.jpeg"
       alt="if the cover doesn't close correctly"
     />
     <p>
@@ -57,11 +60,11 @@ const IpsScreen = () => (
       SEL. It's a good idea to use different colored wires if you have them.
     </p>
     <Image
-      path="images/screen/gba_frontside_overview.jpeg"
+      path="img/gba-modding/screen/gba_frontside_overview.jpeg"
       alt="frontside of the motherboard"
     />
     <Image
-      path="images/screen/gba_screen_sel_tp2.jpeg"
+      path="img/gba-modding/screen/gba_screen_sel_tp2.jpeg"
       alt="if the cover doesn't close correctly"
     />
     <p>
@@ -77,11 +80,11 @@ const IpsScreen = () => (
       and rubber pads first.
     </p>
     <Image
-      path="images/screen/gba_backside_overview.jpeg"
+      path="img/gba-modding/screen/gba_backside_overview.jpeg"
       alt="backside of the motherboard"
     />
     <Image
-      path="images/screen/gba_trigger_L.jpeg"
+      path="img/gba-modding/screen/gba_trigger_L.jpeg"
       alt="solder left trigger wire"
     />
     <p>
@@ -89,12 +92,12 @@ const IpsScreen = () => (
       GBA is lying face down.)
     </p>
     <Image
-      path="images/screen/gba_trigger_R.jpeg"
+      path="img/gba-modding/screen/gba_trigger_R.jpeg"
       alt="solder right trigger wire"
     />
     <p>Same with the R wire, but to the right trigger.</p>
     <Image
-      path="images/screen/gba_frankenstein.jpeg"
+      path="img/gba-modding/screen/gba_frankenstein.jpeg"
       alt="open gba with a wire mess"
     />
     <p>

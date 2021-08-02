@@ -21,7 +21,7 @@ const Dismantle = () => (
     </ul>
 
     <Image
-      path="images/dismantle/gba_tools.jpeg"
+      path="img/gba-modding/dismantle/gba_tools.jpeg"
       alt="tools needed for dismantling"
     />
     <p>
@@ -29,20 +29,26 @@ const Dismantle = () => (
       Screwdriver (Y tipp) and a 2.0mm Philips Screwdriver (X tip).
     </p>
 
-    <Image path="images/dismantle/gba_backside.jpeg" alt="backside of gba" />
+    <Image
+      path="img/gba-modding/dismantle/gba_backside.jpeg"
+      alt="backside of gba"
+    />
     <p>Remove the 7 screws shown in the image above.</p>
 
     <Image
-      path="images/dismantle/gba_loose_screws.jpeg"
+      path="img/gba-modding/dismantle/gba_loose_screws.jpeg"
       alt="screws placed safely"
     />
     <p>And put them somewhere safe!</p>
 
-    <Image path="images/dismantle/gba_backside_off.jpeg" alt="gba backside" />
+    <Image
+      path="img/gba-modding/dismantle/gba_backside_off.jpeg"
+      alt="gba backside"
+    />
     <p>You can now easily just pull of the back of the GBA.</p>
 
     <Image
-      path="images/dismantle/gba_backside_off_overview.jpeg"
+      path="img/gba-modding/dismantle/gba_backside_off_overview.jpeg"
       alt="gba backside overview"
     />
     <p>
@@ -56,7 +62,7 @@ const Dismantle = () => (
     </p>
 
     <Image
-      path="images/dismantle/gba_screen_ribbon_pin.jpeg"
+      path="img/gba-modding/dismantle/gba_screen_ribbon_pin.jpeg"
       alt="ribbon cable open pin"
     />
     <p>
@@ -65,7 +71,7 @@ const Dismantle = () => (
     </p>
 
     <Image
-      path="images/dismantle/gba_screen_ribbon_disconnect.jpeg"
+      path="img/gba-modding/dismantle/gba_screen_ribbon_disconnect.jpeg"
       alt="disconnect ribbon cable"
     />
     <p>
@@ -75,7 +81,7 @@ const Dismantle = () => (
     </p>
 
     <Image
-      path="images/dismantle/gba_backside_of_screen.jpeg"
+      path="img/gba-modding/dismantle/gba_backside_of_screen.jpeg"
       alt="front plate of gba taken off"
     />
     <p>
@@ -85,7 +91,7 @@ const Dismantle = () => (
     </p>
 
     <Image
-      path="images/dismantle/gba_motherboard.jpeg"
+      path="img/gba-modding/dismantle/gba_motherboard.jpeg"
       alt="motherboard extracted"
     />
     <p>

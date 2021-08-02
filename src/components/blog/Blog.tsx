@@ -11,23 +11,22 @@ const Blog = () => {
     <div>
       <Route exact path="/blog">
         <Link to="/blog/gba-modding">
-          {/* <ArticleCard */}
           <Card
-            image={`${process.env.PUBLIC_URL}/images/gba_new_shell.jpeg`}
+            image={`${process.env.PUBLIC_URL}/img/gba-modding/gba_new_shell.jpeg`}
             circularImage={true}
             title="GBA modding!"
             text="Click here to build the ultimate Gameboy Advance."
             onClick={() => {}}
           />
           <Background
-            image={`${process.env.PUBLIC_URL}/images/gba_background.jpeg`}
+            image={`${process.env.PUBLIC_URL}/img/bg/gba_background.jpeg`}
           />
         </Link>
       </Route>
       <Route path="/blog/gba-modding">
         <GbaModdingArticle />
         <Background
-          image={`${process.env.PUBLIC_URL}/images/bg_gba_single_wire_blur.jpeg`}
+          image={`${process.env.PUBLIC_URL}/img/bg/gba_wire_blur.jpeg`}
         />
       </Route>
     </div>

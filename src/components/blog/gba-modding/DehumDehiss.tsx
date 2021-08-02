@@ -20,7 +20,7 @@ const DehumDehiss = () => (
       component for more than a second!
     </p>
     <Image
-      path="images/dehumdehiss/gba_dehum_dehiss_soldered.jpeg"
+      path="img/gba-modding/dehumdehiss/gba_dehum_dehiss_soldered.jpeg"
       alt="dehum dehiss kit soldered in place"
     />
     <p>

@@ -14,7 +14,7 @@ const AudioAmp = () => (
       speaker and headphones).
     </p>
     <Image
-      path="images/audioamp/gba_audioamp_remove_speaker.jpeg"
+      path="img/gba-modding/audioamp/gba_audioamp_remove_speaker.jpeg"
       alt="removing speaker"
     />
     <p>
@@ -22,7 +22,7 @@ const AudioAmp = () => (
       shown above, and pull the wires loose.
     </p>
     <Image
-      path="images/audioamp/gba_audioamp_placed.jpeg"
+      path="img/gba-modding/audioamp/gba_audioamp_placed.jpeg"
       alt="placing the audioamp"
     />
     <p>
@@ -31,7 +31,7 @@ const AudioAmp = () => (
       you start.
     </p>
     <Image
-      path="images/audioamp/gba_audioamp_soldered.jpeg"
+      path="img/gba-modding/audioamp/gba_audioamp_soldered.jpeg"
       alt="finished soldering the audioamp"
     />
     <p>
