@@ -1,18 +1,42 @@
-.app {
-  background-color: #282c34;
-  color: white;
-  /* background-color: black;
-  color: green; */
-  min-height: 100vh;
-  /* font-size: 28px; */
-  font-size: calc(12px + 2vmin);
-  /* font-family: ScreenMatrix; */
-
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+@media screen and (min-width: 1201px) {
+  .app {
+    font-size: 3rem;
+  }
 }
 
-.app > * {
-  flex-shrink: 0;
+@media screen and (min-width: 601px) and (max-width: 1200px) {
+  .app {
+    font-size: 4vw;
+  }
+}
+
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 600px) {
+  .app {
+    font-size: 6vw;
+  }
+}
+
+.app {
+  text-align: center;
+  /* font-size: calc(10px + 2vmin); */
+  /* font-size: 3vw; */
+  color: white;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 10vh auto 10vh;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+.content {
+  grid-area: main;
+  /* background-color: #226878; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
