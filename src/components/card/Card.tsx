@@ -24,7 +24,7 @@ const Card = ({
           backgroundImage: `url(${image})`,
         }}
       />
-      <div className="card-container">
+      <div className="card-content">
         <div className="card-title">{title}</div>
         <div className="card-text">{text}</div>
       </div>
