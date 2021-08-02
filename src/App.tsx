@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
 import Background from "./components/common/Background";
-import Blog from "./Blog";
+import Blog from "./components/blog/Blog";
 import Card from "./components/card/Card";
 import "./App.css";
 

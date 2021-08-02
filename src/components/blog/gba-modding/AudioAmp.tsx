@@ -1,7 +1,7 @@
 // eslint-disable-next-line
 import react from "react";
-import Image from "../components/article/Image";
-import "../components/article/Article.css";
+import Image from "../../article/Image";
+import "../../article/Article.css";
 
 const AudioAmp = () => (
   <div>

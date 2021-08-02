@@ -1,14 +1,14 @@
 import React from "react";
 // eslint-disable-next-line
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Background from "./components/common/Background";
-import Card from "./components/card/Card";
-import GbaArticle from "./components/article/GbaArticle";
-import "./App.css";
+import Background from "../common/Background";
+import Card from "../card/Card";
+import GbaModdingArticle from "./GbaModdingArticle";
+// import "./App.css";
 
 const Blog = () => {
   return (
-    <div className="content">
+    <div>
       <Route exact path="/blog">
         <Link to="/blog/gba-modding">
           {/* <ArticleCard */}
@@ -25,7 +25,7 @@ const Blog = () => {
         </Link>
       </Route>
       <Route path="/blog/gba-modding">
-        <GbaArticle />
+        <GbaModdingArticle />
         <Background
           image={`${process.env.PUBLIC_URL}/images/bg_gba_single_wire_blur.jpeg`}
         />

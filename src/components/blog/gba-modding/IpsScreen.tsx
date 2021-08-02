@@ -1,7 +1,7 @@
 // eslint-disable-next-line
 import react from "react";
-import Image from "../components/article/Image";
-import "../components/article/Article.css";
+import Image from "../../article/Image";
+import "../../article/Article.css";
 
 const IpsScreen = () => (
   <div>
@@ -69,8 +69,8 @@ const IpsScreen = () => (
       the motherboard.
     </p>
     <p>
-      To solder the other 2 wires you might need to mount the motherboard to the front
-      half of the shell first.
+      To solder the other 2 wires you might need to mount the motherboard to the
+      front half of the shell first.
     </p>
     <p>
       Before mounting the motherboard again, remember to put in all the buttons
@@ -84,7 +84,10 @@ const IpsScreen = () => (
       path="images/screen/gba_trigger_L.jpeg"
       alt="solder left trigger wire"
     />
-    <p>Solder the wire from the L label to the left trigger (remember that the GBA is lying face down.)</p>
+    <p>
+      Solder the wire from the L label to the left trigger (remember that the
+      GBA is lying face down.)
+    </p>
     <Image
       path="images/screen/gba_trigger_R.jpeg"
       alt="solder right trigger wire"
@@ -94,7 +97,11 @@ const IpsScreen = () => (
       path="images/screen/gba_frankenstein.jpeg"
       alt="open gba with a wire mess"
     />
-    <p>You can sneak the wires through the trigger holes, but I was lazy. Kapton tape can be used to make sure the wires don't go totally awry and get damaged when closing the shell.</p>
+    <p>
+      You can sneak the wires through the trigger holes, but I was lazy. Kapton
+      tape can be used to make sure the wires don't go totally awry and get
+      damaged when closing the shell.
+    </p>
   </div>
 );
 

@@ -1,7 +1,7 @@
 // eslint-disable-next-line
 import react from "react";
-import Image from "../components/article/Image";
-import "../components/article/Article.css";
+import Image from "../../article/Image";
+import "../../article/Article.css";
 
 const DehumDehiss = () => (
   <div>
@@ -25,8 +25,8 @@ const DehumDehiss = () => (
     />
     <p>
       Pre-tin all contact points before soldering them together. Solder the
-      points shown above. The board is lying above some components, so it
-      will not be perfectly flush.
+      points shown above. The board is lying above some components, so it will
+      not be perfectly flush.
     </p>
   </div>
 );
