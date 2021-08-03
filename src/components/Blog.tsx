@@ -1,10 +1,9 @@
 import React from "react";
 // eslint-disable-next-line
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Background from "../common/Background";
-import Card from "../card/Card";
-import GbaModdingArticle from "./GbaModdingArticle";
-// import "./App.css";
+import Background from "./common/Background";
+import Card from "./common/Card";
+import GbaModdingArticle from "./blog/GbaModdingArticle";
 
 const Blog = () => {
   return (

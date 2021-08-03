@@ -1,0 +1,43 @@
+.article {
+  border-radius: 15px;
+  background-color: #777777aa;
+  margin: 0.5em;
+  padding: 1em;
+  width: 80vw;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    font-size: 1.4em;
+    margin: 0.5em 0;
+  }
+
+  h3 {
+    font-size: 1em;
+    margin: 0.5em 0;
+  }
+
+  p {
+    font-size: 0.6em;
+    overflow-wrap: normal;
+    text-align: left;
+    margin-top: 0;
+  }
+
+  ul {
+    font-size: 0.5em;
+    overflow-wrap: normal;
+    text-align: left;
+    margin: 0.25em 0;
+  }
+
+  // formatting
+  .margin-bottom-small {
+    margin-bottom: 0.25em;
+  }
+
+  .padding-top-big {
+    padding-top: 1em;
+  }
+}

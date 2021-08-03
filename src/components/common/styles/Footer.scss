@@ -1,0 +1,16 @@
+@import "../../../styles/_colors.scss";
+
+.footer {
+  grid-area: footer;
+  background-color: $blueGray;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .footer-content {
+    display: flex;
+    justify-content: center;
+    font-size: 0.75em;
+  }
+}

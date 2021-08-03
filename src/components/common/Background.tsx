@@ -1,5 +1,5 @@
 // import react from "react";
-import "./Background.css";
+import "./styles/Background.scss";
 
 interface Props {
   image: string;

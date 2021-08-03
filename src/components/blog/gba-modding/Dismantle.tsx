@@ -1,7 +1,6 @@
 // eslint-disable-next-line
 import react from "react";
-import Image from "../../article/Image";
-import "../../article/Article.css";
+import Image from "../../common/Image";
 
 const Dismantle = () => (
   <div>

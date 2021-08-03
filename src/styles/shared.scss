@@ -1,0 +1,10 @@
+@import "_colors.scss";
+
+// Globally force <Link /> links to be white with no undeline
+a:hover,
+a:visited,
+a:link,
+a:active {
+  color: $white;
+  text-decoration: none;
+}

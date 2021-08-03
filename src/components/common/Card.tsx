@@ -1,5 +1,5 @@
 // import react from "react";
-import "./Card.css";
+import "./styles/Card.scss";
 
 interface Props {
   image: string;

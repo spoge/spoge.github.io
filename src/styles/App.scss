@@ -10,7 +10,6 @@
   }
 }
 
-/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
 @media screen and (max-width: 600px) {
   .app {
     font-size: 6vw;
@@ -30,13 +29,12 @@
     "header"
     "main"
     "footer";
-}
 
-.content {
-  grid-area: main;
-  /* background-color: #226878; */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  .content {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }

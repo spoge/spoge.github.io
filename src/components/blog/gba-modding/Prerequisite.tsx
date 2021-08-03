@@ -1,6 +1,5 @@
 // eslint-disable-next-line
 import react from "react";
-import "../../article/Article.css";
 
 const Prerequisite = () => (
   <div>

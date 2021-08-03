@@ -1,6 +1,6 @@
 // eslint-disable-next-line
 import react from "react";
-import "../article/Article.css";
+import "./styles/Article.scss";
 
 import Intro from "./gba-modding/Intro";
 import Prerequisite from "./gba-modding/Prerequisite";

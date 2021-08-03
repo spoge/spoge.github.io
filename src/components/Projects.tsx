@@ -1,12 +1,13 @@
 import React from "react";
 // eslint-disable-next-line
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
+import Background from "./common/Background";
 
-import Card from "../card/Card";
+import Card from "./common/Card";
 
 const Projects = () => {
   return (
-    <div>
+    <>
       <Link
         to={{
           pathname: "https://sboge.no/terminal",
@@ -46,7 +47,10 @@ const Projects = () => {
           circularImage={false}
         />
       </Link>
-    </div>
+      <Background
+        image={`${process.env.PUBLIC_URL}/img/bg/gba_background.jpeg`}
+      />
+    </>
   );
 };
 
