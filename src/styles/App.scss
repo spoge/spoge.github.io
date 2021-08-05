@@ -1,16 +1,57 @@
-@media screen and (min-width: 1201px) {
+@media (orientation: landscape) and (min-height: 1000px) {
   .app {
-    font-size: 3rem;
+    font-size: 2.25em;
+  }
+  .content {
+    flex-direction: column;
   }
 }
 
-@media screen and (min-width: 601px) and (max-width: 1200px) {
+@media (orientation: landscape) and (min-height: 650px) and (max-height: 1000px) {
+  .app {
+    font-size: 4vh;
+  }
+  .content {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 649px) {
+  .app {
+    font-size: 5vh;
+  }
+  .content {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+}
+
+@media (orientation: portrait) {
+  .content {
+    flex-direction: column;
+  }
+}
+
+@media (orientation: portrait) and (min-width: 900px) {
+  .app {
+    font-size: 2.5em;
+  }
+}
+
+@media (orientation: portrait) and (min-width: 700px) and (max-width: 899px) {
   .app {
     font-size: 4vw;
   }
 }
 
-@media screen and (max-width: 600px) {
+@media (orientation: portrait) and (max-width: 699px) {
   .app {
     font-size: 5.5vw;
   }
@@ -33,7 +74,6 @@
   .content {
     grid-area: main;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
   }
