@@ -16,7 +16,7 @@ const Projects = () => {
       >
         <Card
           title="Terminal"
-          text="It knows basic math (including power ^ and parentheses) and even has an brainfuck interpreter!"
+          text="It knows basic math (including power ^ and parentheses) and even has an brainf**k interpreter!"
           image={`${process.env.PUBLIC_URL}/img/icons/terminal_icon.png`}
           circularImage={false}
         />
