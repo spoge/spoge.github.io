@@ -1,6 +1,7 @@
 import React from "react";
 // eslint-disable-next-line
 import { BrowserRouter as Router, Link } from "react-router-dom";
+import GithubIcon from "./GithubIcon";
 import "./styles/Header.scss";
 
 const Header = () => {
@@ -18,7 +19,7 @@ const Header = () => {
             <div className="header-menu-item">Projects</div>
           </Link>
           <Link to={{ pathname: "https://github.com/spoge" }} target="_blank">
-            <div className="header-menu-item">Github</div>
+            <GithubIcon />
           </Link>
         </div>
       </div>
