@@ -5,6 +5,7 @@ import Footer from "./components/common/Footer";
 import Home from "./components/Home";
 import Blog from "./components/Blog";
 import Projects from "./components/Projects";
+import Dnd from "./components/Dnd";
 import "./styles/App.scss";
 
 const App = () => {
@@ -22,6 +23,9 @@ const App = () => {
             </Route>
             <Route path="/projects">
               <Projects />
+            </Route>
+            <Route path="/dnd">
+              <Dnd />
             </Route>
           </Switch>
         </div>
