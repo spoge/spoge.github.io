@@ -23,6 +23,19 @@ const Projects = () => {
       </Link>
       <Link
         to={{
+          pathname: "https://sboge.no/text-adventure",
+        }}
+        target="_blank"
+      >
+        <Card
+          title="Text Adventure"
+          text="A little text adventure. You fortunately don't need to type the responses yourself!"
+          image={`${process.env.PUBLIC_URL}/img/icons/terminal_icon.png`}
+          circularImage={false}
+        />
+      </Link>
+      <Link
+        to={{
           pathname: "https://sboge.no/game-of-life",
         }}
         target="_blank"
