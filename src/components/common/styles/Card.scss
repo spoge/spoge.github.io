@@ -4,14 +4,16 @@
   padding: 1em;
   margin: 0.5em;
   width: 14em;
+  min-height: 5em;
+  max-height: 5em;
   display: grid;
   grid-template-columns: 4em auto;
   grid-template-rows: auto;
   grid-template-areas: "cardImage cardText";
   transition: all 0.3s;
-  
+
   &:hover {
-    transform: scale(1.05,1.05);
+    transform: scale(1.05, 1.05);
   }
 
   .card-image {
@@ -39,12 +41,16 @@
   .card-content {
     padding-left: 1em;
     grid-area: cardText;
+    display: flex;
+    flex-direction: column;
 
     .card-title {
       font-size: 1.2em;
+      flex-grow: 1;
     }
 
     .card-text {
+      flex-grow: 2;
       font-size: 0.7em;
       overflow-wrap: normal;
     }

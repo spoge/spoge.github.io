@@ -29,7 +29,7 @@ const Projects = () => {
       >
         <Card
           title="Text Adventure"
-          text="A little text adventure in a retro style. You fortunately don't need to type the responses yourself!"
+          text="Retro style adventure. You fortunately don't need to type the responses yourself!"
           image={`${process.env.PUBLIC_URL}/img/icons/text_adventure_icon.png`}
           circularImage={false}
         />
