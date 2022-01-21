@@ -29,7 +29,7 @@ const Projects = () => {
       >
         <Card
           title="Text Adventure"
-          text="A little text adventure. You fortunately don't need to type the responses yourself!"
+          text="A little text adventure in a retro style. You fortunately don't need to type the responses yourself!"
           image={`${process.env.PUBLIC_URL}/img/icons/text_adventure_icon.png`}
           circularImage={false}
         />
@@ -42,7 +42,7 @@ const Projects = () => {
       >
         <Card
           title="Game of Life"
-          text="A quite primitive (but working!) implementation of Conway's Game of Life."
+          text="An implementation of Conway's Game of Life. Simulate life through multiple generations."
           image={`${process.env.PUBLIC_URL}/img/icons/game_of_life_icon.png`}
           circularImage={false}
         />

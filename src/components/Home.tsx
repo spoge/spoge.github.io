@@ -18,7 +18,7 @@ const Home = () => {
       <Link to="/projects">
         <Card
           title="Projects"
-          text="Some personal projects and games. Including a terminal, Game of Life and Pokémon."
+          text="Some personal projects and games. Including a text based adventure game, a Pokémon tool etc."
           image={`${process.env.PUBLIC_URL}/img/icons/projects_icon.png`}
           circularImage={false}
         />
