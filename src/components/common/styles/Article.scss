@@ -1,6 +1,8 @@
+@import "../../../styles/colors";
+
 .article {
   border-radius: 15px;
-  background-color: #777777aa;
+  background-color: $transparentGrayBlue;
   margin: 0.5em;
   padding: 1em;
   width: 80vw;

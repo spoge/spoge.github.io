@@ -1,7 +1,4 @@
-// eslint-disable-next-line
-import react from "react";
-import "./styles/Article.scss";
-
+import Article from "../common/Article";
 import Intro from "./gba-modding/Intro";
 import Prerequisite from "./gba-modding/Prerequisite";
 import Dismantle from "./gba-modding/Dismantle";
@@ -14,7 +11,7 @@ import Outro from "./gba-modding/Outro";
 
 const GbaModdingArticle = () => {
   return (
-    <div className="article">
+    <Article>
       <h2>Gba Modding!</h2>
       <Intro />
       <Prerequisite />
@@ -25,7 +22,7 @@ const GbaModdingArticle = () => {
       <IpsScreen />
       <UsbCRechargeable />
       <Outro />
-    </div>
+    </Article>
   );
 };
 

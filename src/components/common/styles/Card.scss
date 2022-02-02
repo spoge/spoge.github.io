@@ -1,6 +1,8 @@
+@import "../../../styles/colors";
+
 .card {
   border-radius: 15px;
-  background-color: #777777aa;
+  background-color: $transparentGrayBlue;
   padding: 1em;
   margin: 0.5em;
   width: 14em;
