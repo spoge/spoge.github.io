@@ -18,6 +18,10 @@
       color: $white;
     }
 
+    .selected {
+      text-decoration: underline;
+    }
+
     .header-menu {
       display: flex;
       align-items: center;
@@ -29,6 +33,10 @@
 
       .header-menu-item:hover {
         color: $lightGray;
+      }
+
+      .selected {
+        text-decoration: underline;
       }
     }
   }
