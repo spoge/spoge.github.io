@@ -11,6 +11,7 @@ const Dnd = () => {
           pathname: "https://sboge.no/dnd/skatten_til_roger_p.pdf",
         }}
         target="_blank"
+        rel="noopener noreferrer"
       >
         <Card
           title="Roger's Treasure"

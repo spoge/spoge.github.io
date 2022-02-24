@@ -37,9 +37,13 @@ const Header = () => {
               Projects
             </div>
           </Link>
-          <Link to={{ pathname: "https://github.com/spoge" }} target="_blank">
+          <a
+            href="https://github.com/spoge"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <GithubIcon />
-          </Link>
+          </a>
         </div>
       </div>
     </div>

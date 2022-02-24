@@ -11,6 +11,7 @@ const Projects = () => {
           pathname: "/terminal",
         }}
         target="_blank"
+        rel="noopener noreferrer"
       >
         <Card
           title="Terminal"
@@ -24,6 +25,7 @@ const Projects = () => {
           pathname: "/text-adventure",
         }}
         target="_blank"
+        rel="noopener noreferrer"
       >
         <Card
           title="Text Adventure"
@@ -37,6 +39,7 @@ const Projects = () => {
           pathname: "/game-of-life",
         }}
         target="_blank"
+        rel="noopener noreferrer"
       >
         <Card
           title="Game of Life"
@@ -50,6 +53,7 @@ const Projects = () => {
           pathname: "/pokebox-viewer",
         }}
         target="_blank"
+        rel="noopener noreferrer"
       >
         <Card
           title="Pokémon Boxes"
