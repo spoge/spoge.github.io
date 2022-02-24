@@ -1,4 +1,3 @@
-import Article from "../common/Article";
 import Intro from "./gba-modding/Intro";
 import Prerequisite from "./gba-modding/Prerequisite";
 import Dismantle from "./gba-modding/Dismantle";
@@ -13,18 +12,15 @@ import Background from "../common/Background";
 const GbaModdingArticle = () => {
   return (
     <>
-      <Article>
-        <h2>Gba Modding!</h2>
-        <Intro />
-        <Prerequisite />
-        <Dismantle />
-        <ClickyTrigger />
-        <AudioAmp />
-        <DehumDehiss />
-        <IpsScreen />
-        <UsbCRechargeable />
-        <Outro />
-      </Article>
+      <Intro />
+      <Prerequisite />
+      <Dismantle />
+      <ClickyTrigger />
+      <AudioAmp />
+      <DehumDehiss />
+      <IpsScreen />
+      <UsbCRechargeable />
+      <Outro />
       <Background
         image={`${process.env.PUBLIC_URL}/img/bg/gba_wire_blur.jpeg`}
       />

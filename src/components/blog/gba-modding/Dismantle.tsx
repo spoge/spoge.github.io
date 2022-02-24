@@ -1,9 +1,10 @@
 // eslint-disable-next-line
 import react from "react";
+import ArticleCard from "../../common/ArticleCard";
 import Image from "../../common/Image";
 
 const Dismantle = () => (
-  <div>
+  <ArticleCard>
     <h3 className="padding-top-big">GBA Dismantling</h3>
     <p>
       The most important part of the GBA is the motherboard. To either install
@@ -97,7 +98,7 @@ const Dismantle = () => (
       This is the most important part of the GBA. The motherboard is what we
       want to install into a new shell or do other modifications to.
     </p>
-  </div>
+  </ArticleCard>
 );
 
 export default Dismantle;

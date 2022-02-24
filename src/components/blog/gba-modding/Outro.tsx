@@ -1,9 +1,10 @@
 // eslint-disable-next-line
 import react from "react";
+import ArticleCard from "../../common/ArticleCard";
 import Image from "../../common/Image";
 
 const Outro = () => (
-  <div>
+  <ArticleCard>
     <h3>The Ultimate GBA</h3>
     <p>It's alive!</p>
     <Image path="img/gba-modding/gba_done.jpeg" alt="the ultimate gba" />
@@ -12,7 +13,7 @@ const Outro = () => (
       shell, a beautiful screen, and excellent audio, I think I will take a
       nostalgia trip down memory lane now.
     </p>
-  </div>
+  </ArticleCard>
 );
 
 export default Outro;

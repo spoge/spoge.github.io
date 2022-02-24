@@ -1,9 +1,10 @@
 // eslint-disable-next-line
 import react from "react";
+import ArticleCard from "../../common/ArticleCard";
 import Image from "../../common/Image";
 
 const AudioAmp = () => (
-  <div>
+  <ArticleCard>
     <h3>Audio Amplifier</h3>
     <p>
       With the AudioAmp mod you can boost the quality and the speaker volume to
@@ -38,7 +39,7 @@ const AudioAmp = () => (
       points as shown above. It doesn't matter which of the speaker wires go to
       which of the solder point.
     </p>
-  </div>
+  </ArticleCard>
 );
 
 export default AudioAmp;

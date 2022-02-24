@@ -1,8 +1,9 @@
 // eslint-disable-next-line
 import react from "react";
+import ArticleCard from "../../common/ArticleCard";
 
 const Prerequisite = () => (
-  <div>
+  <ArticleCard>
     <h3>Prerequisite</h3>
     <p>
       A few mods are quite easy to install, while many do require some
@@ -57,7 +58,7 @@ const Prerequisite = () => (
       <li>Transparent L/R button (required)</li>
       <li>Soldering Iron (required)</li>
     </ul>
-  </div>
+  </ArticleCard>
 );
 
 export default Prerequisite;

@@ -1,9 +1,10 @@
 // eslint-disable-next-line
 import react from "react";
+import ArticleCard from "../../common/ArticleCard";
 import Image from "../../common/Image";
 
 const DehumDehiss = () => (
-  <div>
+  <ArticleCard>
     <h3>Dehum Dehiss Kit</h3>
     <p>
       When adding more powerful hardware to the GBA, the system uses more power
@@ -27,7 +28,7 @@ const DehumDehiss = () => (
       points shown above. The board is lying above some components, so it will
       not be perfectly flush.
     </p>
-  </div>
+  </ArticleCard>
 );
 
 export default DehumDehiss;

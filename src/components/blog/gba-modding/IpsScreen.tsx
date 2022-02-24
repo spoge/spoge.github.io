@@ -1,9 +1,10 @@
 // eslint-disable-next-line
 import react from "react";
+import ArticleCard from "../../common/ArticleCard";
 import Image from "../../common/Image";
 
 const IpsScreen = () => (
-  <div>
+  <ArticleCard>
     <h3>IPS Screen Replacement</h3>
     <p>
       The most noticeable about the original GBA after the shell, is the screen.
@@ -104,7 +105,7 @@ const IpsScreen = () => (
       tape can be used to make sure the wires don't go totally awry and get
       damaged when closing the shell.
     </p>
-  </div>
+  </ArticleCard>
 );
 
 export default IpsScreen;

@@ -1,9 +1,10 @@
 // eslint-disable-next-line
 import react from "react";
+import ArticleCard from "../../common/ArticleCard";
 import Image from "../../common/Image";
 
 const UsbCRechargeable = () => (
-  <div>
+  <ArticleCard>
     <h3>USB-C Rechargeable Battery</h3>
     <p>
       This is probably the easiest of the mods to install. If you have a new
@@ -37,7 +38,7 @@ const UsbCRechargeable = () => (
       is not properly aligned with the cover hole. Use a tweezer to (carefully!)
       align the port and the hole when closing the lid.
     </p>
-  </div>
+  </ArticleCard>
 );
 
 export default UsbCRechargeable;

@@ -1,8 +1,10 @@
 // eslint-disable-next-line
 import react from "react";
+import ArticleCard from "../../common/ArticleCard";
 
 const Intro = () => (
-  <div>
+  <ArticleCard>
+    <h2>Gba Modding!</h2>
     <h3>Why would you want to?</h3>
     <p>
       The Gameboy Advance is a legendary handheld console from 2001. With over
@@ -59,7 +61,7 @@ const Intro = () => (
       Do you want to have LED on your GBA? You can! LED flashing when you press
       the transparent shoulder buttons. Is it necessary? No. Is it awesome? Yes.
     </p>
-  </div>
+  </ArticleCard>
 );
 
 export default Intro;

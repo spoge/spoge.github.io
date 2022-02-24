@@ -1,9 +1,10 @@
 // eslint-disable-next-line
 import react from "react";
+import ArticleCard from "../../common/ArticleCard";
 import Image from "../../common/Image";
 
 const ClickyTrigger = () => (
-  <div>
+  <ArticleCard>
     <h3>Clicky Trigger Buttons</h3>
     <p>
       The old triggers for the GBA doesn't really have the same clicky feedback
@@ -43,7 +44,7 @@ const ClickyTrigger = () => (
       wire cutter.
     </p>
     <p>Repeat this for the other trigger.</p>
-  </div>
+  </ArticleCard>
 );
 
 export default ClickyTrigger;
