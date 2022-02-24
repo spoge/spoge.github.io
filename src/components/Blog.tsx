@@ -1,8 +1,7 @@
-import React from "react";
 // eslint-disable-next-line
 import { BrowserRouter as Router, Link } from "react-router-dom";
-import Background from "./common/Background";
 import Card from "./common/Card";
+import Background from "./common/Background";
 
 const Blog = () => {
   return (

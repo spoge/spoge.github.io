@@ -1,4 +1,3 @@
-import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
@@ -6,8 +5,8 @@ import Home from "./components/Home";
 import Blog from "./components/Blog";
 import Projects from "./components/Projects";
 import Dnd from "./components/Dnd";
-import "./styles/App.scss";
 import GbaModdingArticle from "./components/blog/GbaModdingArticle";
+import "./styles/App.scss";
 
 const App = () => {
   return (

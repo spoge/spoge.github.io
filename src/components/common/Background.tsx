@@ -1,4 +1,3 @@
-// import react from "react";
 import "./styles/Background.scss";
 
 interface Props {

@@ -1,6 +1,4 @@
-// eslint-disable-next-line
-import react from "react";
-import "./Image.css";
+import "./styles/Image.scss";
 
 interface Props {
   path: string;

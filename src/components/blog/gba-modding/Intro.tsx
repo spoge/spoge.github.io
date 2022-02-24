@@ -1,5 +1,3 @@
-// eslint-disable-next-line
-import react from "react";
 import ArticleCard from "../../common/ArticleCard";
 
 const Intro = () => (

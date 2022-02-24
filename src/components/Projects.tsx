@@ -1,16 +1,14 @@
-import React from "react";
 // eslint-disable-next-line
 import { BrowserRouter as Router, Link } from "react-router-dom";
-import Background from "./common/Background";
-
 import Card from "./common/Card";
+import Background from "./common/Background";
 
 const Projects = () => {
   return (
     <>
       <Link
         to={{
-          pathname: "https://sboge.no/terminal",
+          pathname: "/terminal",
         }}
         target="_blank"
       >
@@ -23,7 +21,7 @@ const Projects = () => {
       </Link>
       <Link
         to={{
-          pathname: "https://sboge.no/text-adventure",
+          pathname: "/text-adventure",
         }}
         target="_blank"
       >
@@ -36,7 +34,7 @@ const Projects = () => {
       </Link>
       <Link
         to={{
-          pathname: "https://sboge.no/game-of-life",
+          pathname: "/game-of-life",
         }}
         target="_blank"
       >
@@ -49,7 +47,7 @@ const Projects = () => {
       </Link>
       <Link
         to={{
-          pathname: "https://sboge.no/pokebox-viewer",
+          pathname: "/pokebox-viewer",
         }}
         target="_blank"
       >
