@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
 import Home from "./components/Home";
@@ -7,6 +7,7 @@ import Blog from "./components/Blog";
 import Projects from "./components/Projects";
 import Dnd from "./components/Dnd";
 import "./styles/App.scss";
+import GbaModdingArticle from "./components/blog/GbaModdingArticle";
 
 const App = () => {
   return (
@@ -14,20 +15,13 @@ const App = () => {
       <div className="app">
         <Header />
         <div className="content">
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route path="/blog">
-              <Blog />
-            </Route>
-            <Route path="/projects">
-              <Projects />
-            </Route>
-            <Route path="/dnd">
-              <Dnd />
-            </Route>
-          </Switch>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="blog" element={<Blog />} />
+            <Route path="blog/gba-modding" element={<GbaModdingArticle />} />
+            <Route path="projects" element={<Projects />} />
+            <Route path="dnd" element={<Dnd />} />
+          </Routes>
         </div>
         <Footer />
       </div>

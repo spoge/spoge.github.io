@@ -8,21 +8,27 @@ import DehumDehiss from "./gba-modding/DehumDehiss";
 import IpsScreen from "./gba-modding/IpsScreen";
 import UsbCRechargeable from "./gba-modding/UsbCRechargeable";
 import Outro from "./gba-modding/Outro";
+import Background from "../common/Background";
 
 const GbaModdingArticle = () => {
   return (
-    <Article>
-      <h2>Gba Modding!</h2>
-      <Intro />
-      <Prerequisite />
-      <Dismantle />
-      <ClickyTrigger />
-      <AudioAmp />
-      <DehumDehiss />
-      <IpsScreen />
-      <UsbCRechargeable />
-      <Outro />
-    </Article>
+    <>
+      <Article>
+        <h2>Gba Modding!</h2>
+        <Intro />
+        <Prerequisite />
+        <Dismantle />
+        <ClickyTrigger />
+        <AudioAmp />
+        <DehumDehiss />
+        <IpsScreen />
+        <UsbCRechargeable />
+        <Outro />
+      </Article>
+      <Background
+        image={`${process.env.PUBLIC_URL}/img/bg/gba_wire_blur.jpeg`}
+      />
+    </>
   );
 };
 
