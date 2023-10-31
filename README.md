@@ -24,5 +24,5 @@ Your app is ready to be deployed!
 
 ### `npm run deploy`
 
-Builds the app for production from the local `develop` branch, then deploys the bundled code to the remote `master` branch of this repository.<br />
+Builds the app for production from `master`, then deploys the bundled code to the remote `pages` branch of this repository.<br />
 This will make the changes visible on the website.
