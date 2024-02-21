@@ -62,6 +62,20 @@ const Projects = () => {
           circularImage={false}
         />
       </Link>
+      <Link
+        to={{
+          pathname: "/stratagem-bootcamp",
+        }}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Card
+          title="Helldivers 2"
+          text="Welcome to the Helldivers 2 Stratagem Bootcamp, recruit! Practice summoning your Stratagems faster."
+          image={`${process.env.PUBLIC_URL}/img/icons/helldivers_2_icon.jpg`}
+          circularImage={true}
+        />
+      </Link>
       <Background
         image={`${process.env.PUBLIC_URL}/img/bg/gba_background.jpeg`}
       />
