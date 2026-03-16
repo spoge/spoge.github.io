@@ -76,6 +76,20 @@ const Projects = () => {
           circularImage={true}
         />
       </Link>
+      <Link
+        to={{
+          pathname: "/slay-clone",
+        }}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Card
+          title="Slay Clone"
+          text="Expand your kingdoms, manage your economy, and outmaneuver rival factions in turn-based hex warfare."
+          image={`${process.env.PUBLIC_URL}/img/icons/slay_icon.png`}
+          circularImage={true}
+        />
+      </Link>
       <Background
         image={`${process.env.PUBLIC_URL}/img/bg/gba_background.jpeg`}
       />
